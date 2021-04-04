@@ -1,4 +1,4 @@
-# Crystal-Twitter-clone
+# Crystal Twitter Clone
 
 # All possible pages
 ➔	Home

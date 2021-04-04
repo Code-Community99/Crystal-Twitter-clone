@@ -1,4 +1,4 @@
-# Crystal-Twitter-clone
+# Crystal Twitter Clone
 # Indepth explanation on the skeleton of this project
 
 ## Main folder - src
