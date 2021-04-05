@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Home from './pages/home/Home';
 import Sidebar from './global/components/globals/Sidebar';
+import FixedMessaging from './global/components/globals/FixedMessaging';
 // import Navbar from './global/components/globals/Navbar';
 
 
@@ -22,6 +23,9 @@ function App() {
         </div>
 
       </Router>
+      <div className="position-relative">
+        <FixedMessaging />
+      </div>
     </div>
   )
 }

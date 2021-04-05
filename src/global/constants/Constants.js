@@ -1,28 +1,35 @@
-import { FaBars, FaCalendar, FaChartPie, FaCog, FaDashcube, FaPallet, FaUser } from 'react-icons/fa';
+import { FaBars, FaCalendar, FaChartPie, FaCog, FaDashcube, FaHashtag, FaPallet, FaUser, FaBell, FaBookmark, FaList, FaCommentAlt, FaAd, FaChartBar, FaKeyboard } from 'react-icons/fa';
+import { IoChatboxOutline, IoChatbubble, IoColorPalette, IoFlash, IoHelp, IoHelpCircle, IoHome, IoNewspaper } from 'react-icons/io5';
+import { IoIosHelpCircleOutline, IoMdHelpCircleOutline } from 'react-icons/io';
 
 const routes = [
   {
-    icon: <FaDashcube />,
+    icon: <IoHome />,
     title: 'Home',
     to: '/'
   },
   {
-    icon: <FaPallet />,
+    icon: <FaHashtag />,
     title: 'Explore',
     to: './explore'
   },
   {
-    icon: <FaBars />,
+    icon: <FaBell />,
     title: 'Notifications',
     to: '/notifications'
   },
   {
-    icon: <FaCalendar />,
+    icon: <IoChatboxOutline size={20} />,
+    title: 'Messages',
+    to: '/messages'
+  },
+  {
+    icon: <FaBookmark />,
     title: 'Bookmarks',
     to: '/bookmarks'
   },
   {
-    icon: <FaChartPie />,
+    icon: <FaList />,
     title: 'Lists',
     to: '/lists'
   },
@@ -30,52 +37,60 @@ const routes = [
     icon: <FaUser />,
     title: 'Profile',
     to: '/profile'
-  },
+  }
+]
+
+const moreLinks = [
   {
-    icon: <FaCog />,
+    icon: <FaCommentAlt />,
     title: 'Topics',
     to: '/topics'
   },
   {
-    icon: <FaUser />,
+    icon: <IoFlash />,
     title: 'Moments',
     to: '/moments'
   },
   {
-    icon: <FaUser />,
+    icon: <IoNewspaper />,
     title: 'News letter',
     to: '/news-letter'
   },
   {
-    icon: <FaUser />,
+    icon: <FaAd />,
     title: 'Twitter ads',
     to: '/twitter-ads'
   },
   {
-    icon: <FaUser />,
+    icon: <FaChartBar />,
     title: 'Analytics',
     to: '/analytics'
   },
   {
-    icon: <FaUser />,
+    icon: 'divider',
+    title: 'divider',
+    to: 'divider'
+  },
+  {
+    icon: <FaCog />,
     title: 'Settings and privacy',
     to: '/settings-and-privacy'
   },
   {
-    icon: <FaUser />,
+    icon: <IoMdHelpCircleOutline size={20} />,
     title: 'Help center',
     to: '/help-center'
   },
   {
-    icon: <FaUser />,
+    icon: <IoColorPalette />,
     title: 'Display',
     to: '/display'
   },
   {
-    icon: <FaUser />,
+    icon: <FaKeyboard />,
     title: 'Keyboard shortcuts',
     to: '/keyboard-shortcuts'
-  },
+  }
 ]
 
-export { routes }
+export { routes, moreLinks }

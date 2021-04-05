@@ -42,8 +42,8 @@
 #### N/B:- If you realize that you have made a page and its returning 404 remember to add the route and the component into App.js
 
 #       RESOURCES / ENVIRONMENT
-*               Vscode
-        > Plugins
+*        Vscode
+-        > Plugins
                 - Auto Import - ES6, TS, JSX, TSX (important)
                 - React-Native/React/Redux snippets for es6/es7 (important)
                 - ES7 React/Redux/GraphQL/React-Native snippets (important)
@@ -51,3 +51,7 @@
                 - ESLint
                 - Material Icon Theme
                 - Dark+ Material
+
+#### N/B:- Use <a href="https://uiwjs.github.io/#/components">https://uiwjs.github.io/#/components</> To learn about uiwjs a library used in most cases within the app next to Material UI core
+
+#### N/B:- I have done the sidebar and the fixed messaging component to speed up the development process.
