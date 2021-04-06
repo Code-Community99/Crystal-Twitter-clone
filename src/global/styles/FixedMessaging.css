@@ -1,5 +1,5 @@
 .fixed-messaging-component {
-  width: 30vw;
+  width: 29.5vw;
   /* height: 0; */
   max-height: 80vh;
   position: fixed;
@@ -22,7 +22,6 @@
   align-items: center;
   padding: 0 10px;
 }
-
 
 .fixed-messaging-component-right-icons {
   margin-left: auto;
