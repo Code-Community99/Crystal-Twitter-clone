@@ -78,10 +78,6 @@ function FixedMessaging() {
       </div>
       <div className="divider"></div>
 
-      {/* {
-        !messageReading ? <MessagesViewingComponent active={messagesBodyActive} activateMessagesBody={activateMessagesBody} readMessage={readMessage} /> : <MessageReadingComponent active={messagesBodyActive} activateMessagesBody={activateMessagesBody} readMessage={readMessage} />
-
-      } */}
       <div className={`fixed-messaging-component-body ${messagesBodyActive ? 'fixed-messaging-component-body-active' : ''}`}>
 
         {/* The message body stuff */}

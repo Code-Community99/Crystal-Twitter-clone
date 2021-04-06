@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Home from './pages/home/Home';
 import Sidebar from './global/components/globals/Sidebar';
 import FixedMessaging from './global/components/globals/FixedMessaging';
+import Explore from './pages/explore/Explore';
 // import Navbar from './global/components/globals/Navbar';
+import Notifications from './pages/notifications/Notifications';
 
 
 function App() {
@@ -15,9 +17,8 @@ function App() {
           <Sidebar />
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route exact path='/account/sign_up' render={() => ('SIGN UP')} />
-            <Route exact path='/account/sign_in' render={() => ('SIGN IN')} />
-            <Route exact path='/projects' render={() => ('PROJECTS')} />
+            <Route exact path='/explore' component={Explore} />
+            <Route exact path='/notifications' component={Notifications} />
             <Route render={() => ('PAGE NOT FOUND')} />
           </Switch>
         </div>
