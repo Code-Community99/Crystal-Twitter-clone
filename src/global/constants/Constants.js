@@ -93,4 +93,39 @@ const moreLinks = [
   }
 ]
 
-export { routes, moreLinks }
+const users = [
+  {
+    name: 'Dalmas Ogembo',
+    handle: '@alpha',
+    followers: '2000',
+    following: '1300',
+    quote: 'Some quote',
+    followed_by: 'Somebody Omabere'
+  },
+  {
+    name: 'Quality Works',
+    handle: '@quality',
+    followers: '2000',
+    following: '1300',
+    quote: 'Some quote',
+    followed_by: 'Somebody Omabere'
+  },
+  {
+    name: 'Shamaldas Rancho',
+    handle: '@shamaldas',
+    followers: '2000',
+    following: '1300',
+    quote: 'Some quote',
+    followed_by: 'Somebody Omabere'
+  },
+  {
+    name: 'Raider Dante',
+    handle: '@raider',
+    followers: '2000',
+    following: '1300',
+    quote: 'Some quote',
+    followed_by: 'Somebody Omabere'
+  },
+]
+
+export { routes, moreLinks, users }

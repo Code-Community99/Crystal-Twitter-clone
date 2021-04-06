@@ -1,4 +1,4 @@
-.notifications {
+.main-layout {
   min-height: 100vh;
   width: 100%;
   display: flex;
@@ -6,64 +6,72 @@
   position: relative;
 }
 
-.notifications-left {
-  border-left: 1px solid var(--primary-border-color);
-  border-right: 1px solid var(--primary-border-color);
+.main-layout-left {
   flex: 0.6;
   min-width: 60%;
   max-width: 60%;
   position: relative;
-  min-height: 120vh;
-  height: auto;
-  /* background: red; */
 }
 
-.notifications-header {
+/* .main-layout-header {
   position: sticky;
   top: 0;
   left: 0;
   height: calc(var(--nav-size) - 10px);
   background: var(--primary-bg);
   z-index: 2;
+} */
+
+.main-layout-left-header {
+  height: calc(var(--nav-size) - 10px);
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: var(--primary-bg) !important;
+  z-index: 1;
 }
 
-.notifications-header-top {
+.main-layout-header-top {
+  width: 100%;
   display: flex;
   padding: 0 10px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /* background-color: red; */
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 
-.notifications-header-top h3 {
+.main-layout-header-top h3 {
   font-weight: 700;
 }
 
-.notifications-settings-btn {
+.main-layout-header-top-btn {
   color: var(--primary-color) !important;
   padding: 10px;
 }
 
-.notifications-body {
+.main-layout-body {
+  /* height: calc(100% - var(--nav-size) - 10px); */
   height: 100%;
-  /* background: yellow; */
-  /* position: relative; */
   z-index: -1;
-  /* margin-top: 40px; */
+  width: 100%;
+  /* position: relative; */
 }
 
-.notifications-header-tabs {
-  height: 100%;
+.main-layout-header-tabs {
+  height: calc(100% - var(--nav-size) - 10px);
   position: relative;
   width: 100%;
 }
 
-.notifications-header-tabs .w-tabs {
+.main-layout-header-tabs .w-tabs {
   height: 100%;
+  position: relative;
 }
 
-.notifications-header-tabs .w-tabs-bar {
+.main-layout-header-tabs .w-tabs-bar {
   position: sticky;
   top: calc(var(--nav-size) - 10px);
   left: 0;
@@ -72,13 +80,16 @@
   width: 100%;
 }
 
-.notifications-header-tabs .w-tabs-nav {
+.main-layout-header-tabs .w-tabs-nav {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 
-.notifications-header-tabs .w-tabs-nav .w-tabs-item {
+.main-layout-header-tabs .w-tabs-nav .w-tabs-item {
   width: 50%;
   text-align: center;
   font-weight: 900;
@@ -88,36 +99,41 @@
   border-bottom: 2px solid transparent;
 }
 
-.notifications-header-tabs .w-tabs-nav .w-tabs-item:hover {
+.main-layout-header-tabs .w-tabs-nav .w-tabs-item:hover {
   background: var(--primary-bg-accent);
 }
 
-.notifications-header-tabs .w-tabs-nav .w-tabs-item.active {
+.main-layout-header-tabs .w-tabs-nav .w-tabs-item.active {
   color: var(--primary-color);
   position: relative;
   border-bottom: 2px solid var(--primary-color);
 }
 
-.notifications-header-tabs .w-tabs-pane {
-  /* height: 150vh; */
-  /* height: 100%; */
-  /* width: 100%; */
-  background: red;
-}
+/* .main-layout-header-tabs .w-tabs-line {
+  height: calc(100% - 100px);
+  height: 100%;
+} */
 
-.notifications-right {
-  position: relative;
+/* .main-layout-header-tabs .w-tabs-pane {
+  height: calc(100% - 100px);
+  height: 100%;
+} */
+
+
+.main-layout-right {
   flex: 0.4;
+  width: 40%;
   min-width: 40%;
-  max-width: 40%;
-  /* background: purple; */
+  background: transparent;
   padding: 0 30px;
+  border-left: 1px solid var(--primary-border-color);
 }
 
 .right-sidebar-component {
-  /* position: relative; */
-  /* background: orange; */
+  width: 100%;
   height: 100%;
+  /* background: green; */
+  position: relative;
 }
 
 .right-sidebar-component-header {
@@ -126,7 +142,6 @@
   top: 0;
   left: 0;
   width: 100%;
-  /* background: red; */
   z-index: 2;
 }
 
@@ -139,6 +154,8 @@
   flex-direction: row;
   position: relative;
   background: var(--primary-bg);
+  border: none;
+  outline: none;
 }
 
 .twitter-search-component-wrapper {
@@ -194,15 +211,12 @@
 }
 
 .twitter-search-component-results {
-  /* position: absolute; */
-  /* top: calc(100% - 4px); */
   background: var(--primary-bg);
   width: 100%;
   box-shadow: 0 0 4px #aaa;
   border-radius: 10px;
   padding: 10px;
   min-height: 30vh;
-  /* visibility: hidden; */
 }
 
 /* .twitter-search-component:focus-within .twitter-search-component-results {
@@ -222,7 +236,7 @@
 }
 
 .right-sidebar-component-body {
-  padding-bottom: 6vh;
+  padding-bottom: 12vh;
 }
 
 .right-sidebar-component-body-common {
@@ -268,14 +282,12 @@
 }
 
 .twitter-trend .trend-data p {
-  /* color: var(--twitter-lighter-color); */
   color: #aaa;
   font-size: 14px;
 }
 
 .twitter-trend .trend-elipsis {
   font-size: 18px;
-  /* color: var(--primary-color); */
   color: #aaa;
   font-weight: 400;
   opacity: 0.8;
@@ -347,7 +359,6 @@
 .who-to-follow-popover-header {
   width: 100%;
   display: flex;
-  /* background: red; */
   position: relative
 }
 

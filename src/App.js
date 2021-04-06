@@ -6,6 +6,7 @@ import FixedMessaging from './global/components/globals/FixedMessaging';
 import Explore from './pages/explore/Explore';
 // import Navbar from './global/components/globals/Navbar';
 import Notifications from './pages/notifications/Notifications';
+import './global/styles/MainLayout.css';
 
 
 function App() {
