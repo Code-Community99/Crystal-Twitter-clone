@@ -11,17 +11,7 @@ import {
   RightSidebarTwitterWhoToFollow
 } from '../../global/components/globals/MainLayoutComponents';
 
-import './../../styles/notifications/Notifications.css';
-import {
-  TwitterNotification,
-  FollowNotification,
-  LikeNotification,
-  RecommendedForYouNotification,
-  TweetNotification,
-  RetweetNotification
-} from '../../global/components/notifications/NotificationComponents';
-
-function Notifications() {
+function Bookmarks() {
   return (
     <MainLayout>
 
@@ -34,29 +24,11 @@ function Notifications() {
           </MainLayoutCustomHeader>
         
         */}
-        <MainLayoutHeader pagetitle="Notifications" icon={<IoIosCog size={26} />} />
+        <MainLayoutHeader pagetitle="Bookmarks" />
 
         {/* ADD ALL THE CODE YOU NEED TO DO FOR A SPECIFIC PAGE HERE, EDITING THE WIDTH OR ANY OTHER PROPERTIES OF THE LEFT AND RIGHT SIDEBAR HERE PASS IN AN ATTRIBUTE OF 'newclass=`someclass` ' TO MAINLAYOUTLEFT AND MAINLAYOUTRIGHT */}
 
-        <div className="main-layout-header-tabs">
-          <Tabs type="line" activeKey="1" onChange={e => console.log(e)}>
 
-            <Tabs.Pane label="All" key="1">
-              <div className="all-notifications">
-                <FollowNotification />
-                <LikeNotification />
-                <RecommendedForYouNotification />
-                <TweetNotification />
-                <RetweetNotification />
-                <TwitterNotification />
-              </div>
-            </Tabs.Pane>
-            <Tabs.Pane label="Mentions" key="2">
-              <h3>Mentions</h3>
-            </Tabs.Pane>
-
-          </Tabs>
-        </div>
 
       </MainLayoutLeft>
 
@@ -69,4 +41,4 @@ function Notifications() {
     </MainLayout>
   )
 }
-export default Notifications
+export default Bookmarks

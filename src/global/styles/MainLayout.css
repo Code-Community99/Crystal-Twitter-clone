@@ -29,6 +29,7 @@
   left: 0;
   background: var(--primary-bg) !important;
   z-index: 1;
+  border-bottom: 1px solid var(--primary-border-color);
 }
 
 .main-layout-header-top {
@@ -41,6 +42,7 @@
   position: sticky;
   top: 0;
   left: 0;
+  height: 100%;
 }
 
 .main-layout-header-top h3 {

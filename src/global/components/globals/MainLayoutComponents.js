@@ -57,7 +57,7 @@ const MainLayoutHeader = ({ pagetitle, icon, newclass }) => {
 
 const MainLayoutCustomHeader = ({ newclass, children }) => {
   return (
-    <div className={`main-layout-right ${newclass}`}>
+    <div className={`main-layout-header-top ${newclass}`}>
       {children}
     </div>
   )
