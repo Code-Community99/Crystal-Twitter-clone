@@ -1,10 +1,11 @@
 import React, { forwardRef } from 'react'
 import { Avatar, IconButton, Button } from '@material-ui/core';
 import { Popover } from 'uiw';
-import { IoEllipsisHorizontal } from 'react-icons/io5';
-import { IoIosCloseCircle, IoIosCog, IoIosSearch } from 'react-icons/io';
+import { IoEllipsisHorizontal, IoHeart } from 'react-icons/io5';
+import { IoIosCloseCircle, IoIosCog, IoIosSearch, IoIosShare, IoIosShareAlt } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import { users } from '../../constants/Constants';
+import { FaRetweet, FaCommentAlt, FaComment, FaChartBar } from 'react-icons/fa';
 
 
 const MainLayout = ({ children }) => {
@@ -57,9 +58,11 @@ const MainLayoutHeader = ({ pagetitle, icon, newclass }) => {
 
 const MainLayoutCustomHeader = ({ newclass, children }) => {
   return (
-    <div className={`main-layout-header-top ${newclass}`}>
-      {children}
-    </div>
+    <div className={`main-layout-left-header`}>
+      <div className={`${newclass}`}>
+        {children}
+      </div>
+    </div >
   )
 }
 
@@ -289,6 +292,128 @@ const RightSidebarFooter = () => {
     </div>
   )
 }
+
+const ReTweetCard = () => {
+  const str = 'Start your own web hosting business. Our reseller hosting plans are the perfect choice for your reseller business. They all come with cPanel/WHM the leading control panel in the web hosting industry';
+  return (
+    <div className="tweet-card">
+      <div className="tweet-card-top-bar">
+        <div className="tweet-card-top-bar-icon">
+          <FaRetweet />
+        </div>
+        <p>Retweet</p>
+      </div>
+      <div className="tweet-card-bottom-bar">
+        <div className="tweet-card-bottom-bar-left">
+          <Avatar>
+            D
+          </Avatar>
+        </div>
+        <div className="tweet-card-bottom-bar-right">
+          <div className="tweet-card-bottom-bar-right-header">
+            <h3>Mango hosting and domain company</h3>
+            <p>@Mango_hosting . Mar 20</p>
+            <IoEllipsisHorizontal className="tweet-icon" />
+          </div>
+          <div className="tweet-card-bottom-bar-right-body">
+            <p className="tweet-card-bottom-bar-right-body-text">
+              Get the Best and Secured Web Hosting at Kes 1499/yr. 10 GB Web Space, Free SSL Certificate, Unlimited Email Accounts, Unlimited Sub Domains, Free Backups and many more. For Order and More information, Visit our Website: https://mango.ke
+            </p>
+            <div className="tweet-card-bottom-bar-right-body-link-review">
+              <div className="tweet-card-bottom-bar-right-body-link-review-thumbnail">
+                <img src="https://mango.ke/wp-content/uploads/2020/11/logomango.png" alt="some mine" />
+              </div>
+              <div className="tweet-card-bottom-bar-right-body-link-review-meta">
+                <p className="title">
+                  Mango hosting limited
+                </p>
+                <p className="description">
+                  {str.split(' ').slice(0, 15).join(' ')}...
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="tweet-card-bottom-bar-right-footer">
+            <div className="tweet-card-bottom-bar-right-footer-actions">
+
+              <ActionButton icon={<FaComment size={18} />} count="21" />
+              <ActionButton icon={<FaRetweet size={18} />} count="12" />
+              <ActionButton icon={<IoHeart size={18} />} count="45" />
+              <ActionButton icon={<IoIosShare size={18} />} count="34" />
+              <ActionButton icon={<FaChartBar size={18} />} />
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const TweetCard = () => {
+  const str = 'Start your own web hosting business. Our reseller hosting plans are the perfect choice for your reseller business. They all come with cPanel/WHM the leading control panel in the web hosting industry';
+  return (
+    <div className="tweet-card">
+      <div className="tweet-card-bottom-bar">
+        <div className="tweet-card-bottom-bar-left">
+          <Avatar>
+            D
+          </Avatar>
+        </div>
+        <div className="tweet-card-bottom-bar-right">
+          <div className="tweet-card-bottom-bar-right-header">
+            <h3>Mango hosting and domain company</h3>
+            <p>@Mango_hosting . Mar 20</p>
+            <IoEllipsisHorizontal className="tweet-icon" />
+          </div>
+          <div className="tweet-card-bottom-bar-right-body">
+            <p className="tweet-card-bottom-bar-right-body-text">
+              Get the Best and Secured Web Hosting at Kes 1499/yr. 10 GB Web Space, Free SSL Certificate, Unlimited Email Accounts, Unlimited Sub Domains, Free Backups and many more. For Order and More information, Visit our Website: https://mango.ke
+            </p>
+            <div className="tweet-card-bottom-bar-right-body-link-review">
+              <div className="tweet-card-bottom-bar-right-body-link-review-thumbnail">
+                <img src="https://mango.ke/wp-content/uploads/2020/11/logomango.png" alt="some mine" />
+              </div>
+              <div className="tweet-card-bottom-bar-right-body-link-review-meta">
+                <p className="title">
+                  Mango hosting limited
+                </p>
+                <p className="description">
+                  {str.split(' ').slice(0, 15).join(' ')}...
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="tweet-card-bottom-bar-right-footer">
+            <div className="tweet-card-bottom-bar-right-footer-actions">
+
+              <ActionButton icon={<FaComment size={18} />} count="21" />
+              <ActionButton icon={<FaRetweet size={18} />} count="12" />
+              <ActionButton icon={<IoHeart size={18} />} count="45" />
+              <ActionButton icon={<IoIosShare size={18} />} count="34" />
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const ActionButton = ({ icon, count }) => {
+  return (
+    <div className="tweet-card-bottom-bar-right-footer-action">
+      <div className="action-icon">
+        <IconButton className="action-icon-btn">
+          {icon}
+        </IconButton>
+      </div>
+      <div className="action-text">
+        {count}
+      </div>
+    </div>
+  )
+}
 export {
   MainLayout,
   MainLayoutHeader,
@@ -299,5 +424,8 @@ export {
   RightSidebarSearchHeader,
   RightSidebarTwitterTrends,
   RightSidebarTwitterWhoToFollow,
-  RightSidebarFooter
+  RightSidebarFooter,
+
+  TweetCard,
+  ReTweetCard,
 }

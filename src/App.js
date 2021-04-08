@@ -9,6 +9,8 @@ import Notifications from './pages/notifications/Notifications';
 import './global/styles/MainLayout.css';
 import Bookmarks from './pages/bookmarks/Bookmarks';
 import Lists from './pages/lists/Lsits';
+import Profile from './pages/profile/Profile';
+import Messages from './pages/messages/Message';
 
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
             <Route exact path='/notifications' component={Notifications} />
             <Route exact path='/bookmarks' component={Bookmarks} />
             <Route exact path='/lists' component={Lists} />
+            <Route exact path='/profile' component={Profile} />
+            <Route exact path='/messages' component={Messages} />
             <Route render={() => ('PAGE NOT FOUND')} />
           </Switch>
         </div>
