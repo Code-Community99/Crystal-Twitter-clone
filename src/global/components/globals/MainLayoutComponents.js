@@ -293,7 +293,7 @@ const RightSidebarFooter = () => {
   )
 }
 
-const ReTweetCard = () => {
+const ReTweetCard = (props) => {
   const str = 'Start your own web hosting business. Our reseller hosting plans are the perfect choice for your reseller business. They all come with cPanel/WHM the leading control panel in the web hosting industry';
   return (
     <div className="tweet-card">
@@ -308,10 +308,14 @@ const ReTweetCard = () => {
           <Avatar>
             D
           </Avatar>
+          {props.children}
         </div>
         <div className="tweet-card-bottom-bar-right">
           <div className="tweet-card-bottom-bar-right-header">
-            <h3>Mango hosting and domain company</h3>
+            <div>
+            {props.children}
+              <h3>Mango hosting and domain company</h3>
+            </div>
             <p>@Mango_hosting . Mar 20</p>
             <IoEllipsisHorizontal className="tweet-icon" />
           </div>
@@ -350,22 +354,23 @@ const ReTweetCard = () => {
   )
 }
 
-const TweetCard = () => {
+const TweetCard = (props) => {
   const str = 'Start your own web hosting business. Our reseller hosting plans are the perfect choice for your reseller business. They all come with cPanel/WHM the leading control panel in the web hosting industry';
   return (
     <div className="tweet-card">
       <div className="tweet-card-bottom-bar">
         <div className="tweet-card-bottom-bar-left">
-          <Popover trigger="hover" content={<ProfilePreview/>} placement="bottom">
-
-              <Avatar>
-                D
-              </Avatar>
-          </Popover>
+        {props.children}
+          <Avatar>
+            D
+          </Avatar>
         </div>
         <div className="tweet-card-bottom-bar-right">
           <div className="tweet-card-bottom-bar-right-header">
-            <h3>Mango hosting and domain company</h3>
+            <div>
+            {props.children}
+              <h3>Mango hosting and domain company</h3>
+            </div>
             <p>@Mango_hosting . Mar 20</p>
             <IoEllipsisHorizontal className="tweet-icon" />
           </div>

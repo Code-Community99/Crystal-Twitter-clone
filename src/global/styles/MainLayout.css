@@ -534,6 +534,7 @@
 }
 
 .tweet-card-bottom-bar {
+  position: relative;
   display: flex;
   flex: 1;
 }
@@ -658,11 +659,17 @@
   height: auto;
   border-radius: 10px;
   background-color: var(--primary-bg);
-  box-shadow: 1px 1px 1px #000;
-  padding: 5px;
-  /* position: absolute; */
+  box-shadow: 0px 0px 10px #aaa;
+  padding: 5px 10px;
+  position: absolute;
   z-index: 10;
-  left: 8px;
+  left: 50px;
+  display: none;
+  border: none;
+  outline: none;
+}
+.top-profile {
+  margin-top: 10px;
 }
 .top-profile button {
   background-color: var(--primary-color);
@@ -682,8 +689,11 @@
   font-weight: bold;
   color: #000;
 }
+.hover-profile .hover-content {
+  color: #000 !important;
+}
 .hover-profile .profile-tags {
-  color: navy;
+  color: var(--primary-color);
   padding: 3px;
 }
 .hover-profile .follow-tally {
@@ -692,9 +702,38 @@
   display: flex;
   padding: 5px;
 }
+.top-profile img {
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+}
+.follower-peek p{
+  display: inline;
+}
+.follower-peek p:hover{
+  text-decoration: underline;
+}
+.follower-peek img{
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+.follower-peek img:nth-child(2){
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    left: -10px;
+}
 .hover-profile .follow-tally span{
   color: #0000007a;
 }
+.tweet-card-bottom-bar .tweet-card-bottom-bar-left:hover .hover-profile, .tweet-card-bottom-bar-right-header div:hover .hover-profile{
+  display: block;
+}
 .w-popover-arrow {
   display: none;
+}
+.w-popover {
+  margin-top: -20px;
 }

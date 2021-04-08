@@ -11,7 +11,18 @@ function Home() {
 
       <MainLayoutLeft>
         <MainLayoutHeader pagetitle="Messages" />
-        <TweetCard/>
+        <TweetCard>
+            <ProfilePreview/>
+        </TweetCard>
+        <TweetCard>
+            <ProfilePreview/>
+        </TweetCard>
+        <TweetCard>
+            <ProfilePreview/>
+        </TweetCard>
+        <ReTweetCard>
+            <ProfilePreview/>
+        </ReTweetCard>
       </MainLayoutLeft>
 
       <MainLayoutRight header={true}>
