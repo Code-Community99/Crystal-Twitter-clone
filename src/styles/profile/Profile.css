@@ -1,0 +1,139 @@
+.my-custom-header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.my-custom-header .back-btn {
+  margin: 0 10px;
+  color: var(--primary-color);
+}
+
+.my-custom-header-details {
+  margin-left: 10px;
+}
+
+.my-custom-header-details p {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.profile-data-top {
+  height: 250px;
+  /* background-color: red; */
+}
+
+.profile-data-top-cover {
+  height: 75%;
+  background-color: grey;
+}
+
+.profile-data-top-row {
+  height: 25%;
+  display: flex;
+  align-items: center;
+}
+
+.profile-data-top-row-left {
+  width: 126px;
+  height: 126px;
+  border-radius: 50%;
+  /* padding: 10px; */
+  margin: -60px 0 0 20px;
+  background: var(--primary-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-data-top-row-left-avatar {
+  height: 120px !important;
+  width: 120px !important;
+}
+
+.profile-data-top-row-right {
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.profile-data-top-row-right .edit-profile-btn {
+  border-radius: 50px !important;
+  padding: 10px 15px !important;
+  font-size: 14px !important;
+  text-transform: capitalize !important;
+  border: 1px solid var(--primary-color) !important;
+  color: var(--primary-color) !important;
+  font-weight: 700;
+}
+
+.profile-data-top-row-right .edit-profile-btn:hover {
+  background: var(--primary-bg-accent) !important;
+}
+
+.profile-data-lower {
+  padding: 20px;
+}
+
+.profile-data-lower-name-handle h3 {
+  font-weight: 900;
+}
+
+.profile-data-lower-name-handle p {
+  color: #aaa;
+  font-size: 16px;
+}
+
+.profile-data-lower-bio {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.profile-data-lower-more {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.profile-data-lower-more-item {
+  display: flex;
+  color: #aaa;
+  margin-right: 10px;
+  align-items: center;
+}
+
+.profile-data-lower-more-item-icon {
+  margin-right: 10px;
+}
+
+.profile-data-lower-more-item .link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.profile-data-lower-more-item p {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.profile-data-lower-followers-following .f-link {
+  margin-right: 15px;
+  color: black;
+  text-decoration: none;
+}
+
+.profile-data-lower-followers-following .f-link:hover {
+  text-decoration: underline;
+}
+
+.profile-data-lower-followers-following .f-link .f-link-count {
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.profile-data-lower-followers-following .f-link .f-link-text {
+  font-weight: 400;
+  color: #aaa;
+  font-size: 16px;
+}

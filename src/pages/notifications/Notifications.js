@@ -18,7 +18,8 @@ import {
   LikeNotification,
   RecommendedForYouNotification,
   TweetNotification,
-  RetweetNotification
+  RetweetNotification,
+  NoMentionsComponent
 } from '../../global/components/notifications/NotificationComponents';
 
 function Notifications() {
@@ -52,7 +53,7 @@ function Notifications() {
               </div>
             </Tabs.Pane>
             <Tabs.Pane label="Mentions" key="2">
-              <h3>Mentions</h3>
+              <NoMentionsComponent />
             </Tabs.Pane>
 
           </Tabs>

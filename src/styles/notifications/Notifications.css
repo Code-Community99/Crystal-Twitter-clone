@@ -97,6 +97,7 @@
 .notification-like-avatars {
   display: flex;
   margin-bottom: 4px;
+  z-index: -1;
 }
 
 .notification-like-avatars .more-options {
@@ -106,4 +107,25 @@
 
 .notification-like-avatar {
   margin-right: 6px;
+  z-index: -1;
+}
+
+.no-mention {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+  flex-direction: column;
+}
+
+.no-mention h3 {
+  font-weight: 900;
+  font-size: 22px;
+  margin: 10px 0;
+}
+
+.no-mention p {
+  color: #aaa;
+  font-weight: 400;
+  font-size: 16px;
 }

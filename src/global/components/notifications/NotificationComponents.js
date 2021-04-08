@@ -1,5 +1,5 @@
 import { Avatar, IconButton } from "@material-ui/core"
-import { FaHeart, FaStar, FaTwitter, FaUser } from "react-icons/fa"
+import { FaHeart, FaLine, FaStar, FaTwitter, FaUser } from "react-icons/fa"
 import { } from "react-icons/io"
 import { IoChatbox, IoEllipsisHorizontal, IoEllipsisHorizontalCircle, IoStar, IoText } from "react-icons/io5"
 
@@ -29,7 +29,7 @@ const FollowNotification = () => {
       </div>
       <div className="notification-right">
         <div className="notification-right-wrapper">
-          <Avatar />
+          <Avatar className="notification-like-avatar" />
           <div className="notification-details">
             <div className="notification-details-header-text">
               <h3>Dr Nyamai</h3>
@@ -160,11 +160,21 @@ const RetweetNotification = () => {
   )
 }
 
+const NoMentionsComponent = () => {
+  return (
+    <div className="no-mention">
+      <h3> Nothing to see here - yet </h3>
+      <p>When someone mentions you, you'll find it here.</p>
+    </div>
+  )
+}
+
 export {
   TwitterNotification,
   FollowNotification,
   LikeNotification,
   RecommendedForYouNotification,
   TweetNotification,
-  RetweetNotification
+  RetweetNotification,
+  NoMentionsComponent
 }
