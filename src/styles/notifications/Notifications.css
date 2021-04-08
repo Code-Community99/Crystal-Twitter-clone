@@ -1,0 +1,131 @@
+/* .all-notifications {} */
+
+.twitter-notification {
+  color: var(--primary-color);
+}
+
+.follow-notofication {
+  color: var(--primary-color);
+}
+
+.like-notification {
+  color: rgb(219, 0, 37);
+}
+
+.recommended-for-you-notification {
+  color: purple;
+}
+
+.retweet-notification {
+  color: purple;
+}
+
+.tweet-notification {
+  color: var(--primary-color);
+}
+
+.notification {
+  padding: 10px;
+  border-bottom: 1px solid var(--primary-border-color);
+  display: flex;
+  flex: 1;
+  /* justify-content: ; */
+  cursor: pointer;
+  transition: background-color 0.02s ease;
+}
+
+.notification:hover {
+  background-color: var(--primary-bg-accent);
+}
+
+.notification-left {
+  flex: 0.1;
+}
+
+.notification-right {
+  flex: 0.9;
+}
+
+.notification-right-wrapper h5 {
+  color: #aaa;
+  font-weight: 400;
+}
+
+.notification-details {}
+
+.notification-details-header-text {
+  display: flex;
+  /* align-items: center; */
+  flex-direction: row;
+}
+
+.notification-details-header-text h3 {
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.notification-details-header-text h3:hover {
+  text-decoration: underline;
+}
+
+.notification-details-header-text span {
+  margin-left: 10px;
+  color: #aaa;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.notification-details .text {
+  color: #aaa;
+  font-size: 16px;
+  margin: 10px 0;
+  white-space: pre !important;
+  word-wrap: normal;
+  font-weight: 400 !important;
+
+}
+
+.notification-details p {
+  font-size: 16px;
+  margin: 10px 0;
+  white-space: pre !important;
+  word-wrap: normal;
+  font-weight: 400;
+
+}
+
+.notification-like-avatars {
+  display: flex;
+  margin-bottom: 4px;
+  z-index: -1;
+}
+
+.notification-like-avatars .more-options {
+  margin-left: auto;
+  padding: 10px;
+}
+
+.notification-like-avatar {
+  margin-right: 6px;
+  z-index: -1;
+}
+
+.no-mention {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+  flex-direction: column;
+}
+
+.no-mention h3 {
+  font-weight: 900;
+  font-size: 22px;
+  margin: 10px 0;
+}
+
+.no-mention p {
+  color: #aaa;
+  font-weight: 400;
+  font-size: 16px;
+}
