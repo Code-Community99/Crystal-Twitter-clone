@@ -1,15 +1,41 @@
+/* scollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 .explore{
     padding-top: 4px;
-    min-height: 100vh;
     display: flex;
     flex: 1;
+    overflow-y: hidden;
     position: relative;
-}
 
+}
+.NotificationRight{
+    /* background-color: red; */
+    width: 45%;
+    height: 180vh;
+    position: sticky;
+}
 .exploreContent{
     border-left: 1px solid rgba(211, 203, 216 , 0.3);
     border-right: 1px solid rgba(211, 203, 216 ,0.3);
     width: 60%;
+    /* overflow-y:scroll; */
 
 }
 .top-navbar-left-l-search{
