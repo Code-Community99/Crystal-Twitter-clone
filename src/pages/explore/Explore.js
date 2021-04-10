@@ -9,6 +9,17 @@ import './../../styles/explore/Explore.css';
 import { IoIosCloseCircle, IoIosCog, IoIosSearch } from 'react-icons/io';
 import { FaBars, FaBell, FaSearch , FaCog } from 'react-icons/fa';
 
+import {
+  MainLayout,
+  MainLayoutLeft,
+  MainLayoutHeader,
+  MainLayoutRight,
+  RightSidebarFooter,
+  RightSidebarTwitterTrends,
+  RightSidebarTwitterWhoToFollow
+} from '../../global/components/globals/MainLayoutComponents';
+import './../../styles/notifications/Notifications.css';
+
 // declare an image Url
 let ImageUrl = "https://picsum.photos/seed/picsum/536/354";
 
@@ -157,6 +168,11 @@ function Explore() {
             <p>Show more</p>
           </div>
           
+        </div>
+        <div className="NotificationRight">
+        <RightSidebarTwitterTrends />
+        <RightSidebarTwitterWhoToFollow />
+        <RightSidebarFooter />
         </div>
       </div>
     )
