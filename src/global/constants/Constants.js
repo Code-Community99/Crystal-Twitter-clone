@@ -139,7 +139,7 @@ const tweets = [
       followed_by: 'Somebody Omabere'
     },
     tweet_data: {
-      text: 'Start your \nown web hosting business.Our reseller http://mango.ke hosting plans are the perfect choice for your \nreseller business. They all https://mango.ke, https://maidentcleaning.co.ke come \nwith cPanel/WHM the leading control panel in the web hosting industry https://maidentcleaning.co.ke/office-cleaning-services/ https://mango.ke/web-hosting/ virdis.co.ke',
+      text: 'Start your own web https://mango.ke hosting business.Our resellerhosting plans are the perfect choice for your \nreseller business. They all come with cPanel/WHM the leading control panel in the web hosting industry \nhttps://maidentcleaning.co.ke/office-cleaning-services/ \nhttps://mango.ke/web-hosting/\n virdis.co.ke\nhttps://maidentcleaning.co.ke',
       images: [
         'http://placeimg.com/1200/800/nature',
         'http://placeimg.com/800/1200/nature',

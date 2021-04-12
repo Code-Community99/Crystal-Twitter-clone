@@ -5,7 +5,7 @@ import { IoEllipsisHorizontal, IoHeart } from 'react-icons/io5';
 import { IoIosCloseCircle, IoIosCog, IoIosSearch, IoIosShare, IoIosShareAlt } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import { users } from '../../constants/Constants';
-import { FaRetweet, FaCommentAlt, FaComment, FaChartBar } from 'react-icons/fa';
+import { FaRetweet, FaCommentAlt, FaComment, FaChartBar, FaLink } from 'react-icons/fa';
 import ImageViewer from 'react-simple-image-viewer';
 import ReactPlayer from 'react-player/lazy';
 import { Anchorme } from 'react-anchorme';
@@ -48,9 +48,9 @@ const MainLayoutRight = ({ header, children, newclass }) => {
   )
 }
 
-const MainLayoutHeader = ({ pagetitle, icon, newclass, divider }) => {
+const MainLayoutHeader = ({ pagetitle, icon, divider }) => {
   return (
-    <div className={`main-layout-left-header ${newclass}`}>
+    <div className={`main-layout-left-header`}>
       <div className="main-layout-header-top">
         <h2>{pagetitle}</h2>
         {
@@ -59,6 +59,7 @@ const MainLayoutHeader = ({ pagetitle, icon, newclass, divider }) => {
             {icon}
           </IconButton>
         }
+
       </div>
       {
         divider &&
@@ -68,11 +69,15 @@ const MainLayoutHeader = ({ pagetitle, icon, newclass, divider }) => {
   )
 }
 
-const MainLayoutCustomHeader = ({ newclass, children }) => {
+const MainLayoutCustomHeader = ({ newclass, children, divider }) => {
   return (
     <div className={`main-layout-left-header`}>
-      <div className={`${newclass}`}>
+      <div className={`inner-main-div ${newclass}`}>
         {children}
+        {
+          divider &&
+          <div className="divider" />
+        }
       </div>
     </div >
   )
@@ -475,10 +480,10 @@ const LinkPreview = ({ url_ }) => {
           }
         </p>
         <p className="description">
-          {metaData?.site_description?.split(' ').slice(0, 15).join(' ')}...
+          {metaData?.site_description?.split(' ').slice(0, 15).join(' ')}
         </p>
         <a href={metaData?.site_url} className="link" rel="norefferer">
-          {metaData?.site_title}
+          <FaLink className="link-icon" />{metaData?.site_url}
         </a>
       </div>
     </a>

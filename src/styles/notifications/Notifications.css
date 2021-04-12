@@ -76,13 +76,15 @@
 
 .notification-details-header-text span {
   margin-left: 10px;
-  color: #aaa;
+  /* color: #aaa; */
+  color: rgba(0, 0, 0, 0.9);
   font-size: 16px;
   font-weight: 400;
 }
 
 .notification-details .text {
-  color: #aaa;
+  /* color: #aaa; */
+  color: rgba(0, 0, 0, 0.6);
   font-size: 16px;
   margin: 10px 0;
   white-space: pre !important;

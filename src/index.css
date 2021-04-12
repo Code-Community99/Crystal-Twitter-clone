@@ -47,6 +47,13 @@ body {
   background-color: var(--primary-border-color);
 }
 
+.spacer {
+  height: 12px;
+  background: rgba(238, 238, 238, 0.432);
+  border-top: 1px solid var(--primary-border-color);
+  border-bottom: 1px solid var(--primary-border-color);
+}
+
 .display-flex {
   display: flex;
 }
@@ -73,4 +80,8 @@ body {
 
 .text-center {
   text-align: center;
+}
+
+.react-simple-image-viewer__modal {
+  z-index: 12;
 }
