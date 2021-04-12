@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useCallback, useEffect, useState } from 'react'
 import { Avatar, IconButton, Button } from '@material-ui/core';
 import { Popover } from 'uiw';
 import { IoEllipsisHorizontal, IoHeart } from 'react-icons/io5';
@@ -6,7 +6,12 @@ import { IoIosCloseCircle, IoIosCog, IoIosSearch, IoIosShare, IoIosShareAlt } fr
 import { Link } from 'react-router-dom';
 import { users } from '../../constants/Constants';
 import { FaRetweet, FaCommentAlt, FaComment, FaChartBar } from 'react-icons/fa';
+import ImageViewer from 'react-simple-image-viewer';
+import ReactPlayer from 'react-player/lazy';
+import { Anchorme } from 'react-anchorme';
 
+const cheerio = require('cheerio');
+const getUrls = require('get-urls');
 
 const MainLayout = ({ children }) => {
   return (
@@ -31,16 +36,19 @@ const MainLayoutLeft = ({ children }) => {
 const MainLayoutRight = ({ header, children, newclass }) => {
   return (
     <div className={`main-layout-right ${newclass}`}>
+
+      {/* <div className="main-layout-right-fixed"> */}
       <RightSideBar header={header}>
         {
           children
         }
       </RightSideBar>
+      {/* </div> */}
     </div>
   )
 }
 
-const MainLayoutHeader = ({ pagetitle, icon, newclass }) => {
+const MainLayoutHeader = ({ pagetitle, icon, newclass, divider }) => {
   return (
     <div className={`main-layout-left-header ${newclass}`}>
       <div className="main-layout-header-top">
@@ -52,6 +60,10 @@ const MainLayoutHeader = ({ pagetitle, icon, newclass }) => {
           </IconButton>
         }
       </div>
+      {
+        divider &&
+        <div className="divider" />
+      }
     </div>
   )
 }
@@ -199,7 +211,7 @@ const WhoToFollow = ({ user }, ref) => {
     <div>
       <div className="who-to-follow">
         <div>
-          <Popover trigger="click" placement="bottom" content={<WhoToFollowHoverPopover ref={ref} user={user} />} className="who-to-follow-popover-inner">
+          <Popover trigger="hover" delay={{ show: 1000, hide: 4000 }} placement="bottom" autoAdjustOverflow={true} visibleArrow={false} usePortal={true} content={<WhoToFollowHoverPopover ref={ref} user={user} />} className="who-to-follow-popover-inner">
             <div className="who-to-follow-start">
               <Avatar className="who-to-follow-start-avatar capitalize">
                 {user?.name[0]}
@@ -293,54 +305,126 @@ const RightSidebarFooter = () => {
   )
 }
 
-const ReTweetCard = () => {
-  const str = 'Start your own web hosting business. Our reseller hosting plans are the perfect choice for your reseller business. They all come with cPanel/WHM the leading control panel in the web hosting industry';
+const TweetCard = ({ user, tweetdata }, ref) => {
+
+  const [urls, setUrls] = useState(null);
+  const [currentImage, setCurrentImage] = useState(0);
+  const [isViewerOpen, setIsViewerOpen] = useState(false);
+
+  const str_ = tweetdata?.text;
+
+  const openImageViewer = useCallback((index) => {
+    setCurrentImage(index);
+    setIsViewerOpen(true);
+  }, []);
+
+  const closeImageViewer = () => {
+    setCurrentImage(0);
+    setIsViewerOpen(false);
+  };
+
+  useEffect(() => {
+
+    let _urls = null;
+    if (str_ !== undefined) {
+      _urls = getUrls(str_)
+    }
+    const urls_ = []
+    _urls && _urls.forEach((link) => {
+      urls_.push(link)
+    })
+    setUrls(urls_);
+  }, [])
+
   return (
     <div className="tweet-card">
-      <div className="tweet-card-top-bar">
-        <div className="tweet-card-top-bar-icon">
-          <FaRetweet />
+      {
+        tweetdata?.tweet_type === 'retweet' &&
+        <div className="tweet-card-top-bar">
+          <div className="tweet-card-top-bar-icon">
+            <FaRetweet />
+          </div>
+          <p>Retweet</p>
         </div>
-        <p>Retweet</p>
-      </div>
+      }
       <div className="tweet-card-bottom-bar">
         <div className="tweet-card-bottom-bar-left">
-          <Avatar>
-            D
+          <Popover trigger="hover" delay={{ show: 1000, hide: 2000 }} placement="bottom" autoAdjustOverflow={true} visibleArrow={false} usePortal={true} content={<WhoToFollowHoverPopover ref={ref} user={user} />} className="who-to-follow-popover-inner">
+            <Avatar>
+              D
           </Avatar>
+          </Popover>
         </div>
         <div className="tweet-card-bottom-bar-right">
           <div className="tweet-card-bottom-bar-right-header">
-            <h3>Mango hosting and domain company</h3>
-            <p>@Mango_hosting . Mar 20</p>
+            <Popover trigger="hover" delay={{ show: 1000, hide: 2000 }} placement="bottom" autoAdjustOverflow={true} visibleArrow={false} usePortal={true} content={<WhoToFollowHoverPopover ref={ref} user={user} />} className="who-to-follow-popover-inner">
+              <h3> {user?.name} </h3>
+            </Popover>
+            <p>{user?.handle} . Mar 20</p>
             <IoEllipsisHorizontal className="tweet-icon" />
           </div>
           <div className="tweet-card-bottom-bar-right-body">
-            <p className="tweet-card-bottom-bar-right-body-text">
-              Get the Best and Secured Web Hosting at Kes 1499/yr. 10 GB Web Space, Free SSL Certificate, Unlimited Email Accounts, Unlimited Sub Domains, Free Backups and many more. For Order and More information, Visit our Website: https://mango.ke
-            </p>
-            <div className="tweet-card-bottom-bar-right-body-link-review">
-              <div className="tweet-card-bottom-bar-right-body-link-review-thumbnail">
-                <img src="https://mango.ke/wp-content/uploads/2020/11/logomango.png" alt="some mine" />
-              </div>
-              <div className="tweet-card-bottom-bar-right-body-link-review-meta">
-                <p className="title">
-                  Mango hosting limited
-                </p>
-                <p className="description">
-                  {str.split(' ').slice(0, 15).join(' ')}...
-                </p>
-              </div>
+            <div className="tweet-card-bottom-bar-right-body-text">
+              <Anchorme>
+                {
+                  tweetdata?.text
+                }
+              </Anchorme>
             </div>
+
+            {
+              urls && urls.map((link) => {
+                return <LinkPreview key={link} url_={link} />
+              })
+            }
+
+            {tweetdata?.videos &&
+              <div className="tweet-card-bottom-bar-right-body-video">
+                <ReactPlayer
+                  url="https://www.youtube.com/watch?v=tWxYqHv5BJo"
+                  className="tweet-video"
+                  playIcon={true}
+                  controls={true}
+                  width="100%"
+                  height="100%" />
+              </div>
+            }
+
+            {tweetdata?.images &&
+              <div className="tweet-card-bottom-bar-right-body-images">
+                {tweetdata?.images.map((src, index) => (
+                  <img
+                    key={index}
+                    src={src}
+                    onClick={() => openImageViewer(index)}
+                    width="300"
+                    style={{ margin: '2px' }}
+                    loading='lazy'
+                    alt="" />
+                ))}
+
+                {isViewerOpen && (
+                  <ImageViewer
+                    src={tweetdata?.images}
+                    currentIndex={currentImage}
+                    onClose={closeImageViewer}
+                    className="tweet-card-bottom-bar-right-body-images-viewer"
+                  />
+                )}
+              </div>
+            }
+
           </div>
           <div className="tweet-card-bottom-bar-right-footer">
             <div className="tweet-card-bottom-bar-right-footer-actions">
-
               <ActionButton icon={<FaComment size={18} />} count="21" />
               <ActionButton icon={<FaRetweet size={18} />} count="12" />
               <ActionButton icon={<IoHeart size={18} />} count="45" />
               <ActionButton icon={<IoIosShare size={18} />} count="34" />
-              <ActionButton icon={<FaChartBar size={18} />} />
+              {
+                tweetdata?.tweet_type === 'normal' &&
+                <ActionButton icon={<FaChartBar size={18} />} />
+              }
 
             </div>
           </div>
@@ -350,53 +434,54 @@ const ReTweetCard = () => {
   )
 }
 
-const TweetCard = () => {
-  const str = 'Start your own web hosting business. Our reseller hosting plans are the perfect choice for your reseller business. They all come with cPanel/WHM the leading control panel in the web hosting industry';
+
+const LinkPreview = ({ url_ }) => {
+
+  const [metaData, setMetaData] = useState(null);
+  console.log('_____URL ', url_)
+
+  useEffect(() => {
+    try {
+      fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url_)}`)
+        .then(response => {
+          if (response.ok) return response.json()
+          throw new Error('Network response was not ok.')
+        })
+        .then(data => {
+          const $ = cheerio.load(data.contents);
+          const meta = {
+            "site_name": $('meta[property="og:site_name"]').attr('content'),
+            "site_url": $('link[rel="canonical"]').attr('href'),
+            "site_description": $('meta[property="og:description"]').attr('content'),
+            "site_title": $('meta[property="og:title"]').attr('content') || $('title').text(),
+            "site_image": $('meta[property="og:image"]').attr('content'),
+          }
+          setMetaData(meta);
+        });
+    } catch (error) {
+      console.log('___LINK PREVIEW ERROR___', error)
+    }
+  }, [])
+
   return (
-    <div className="tweet-card">
-      <div className="tweet-card-bottom-bar">
-        <div className="tweet-card-bottom-bar-left">
-          <Avatar>
-            D
-          </Avatar>
-        </div>
-        <div className="tweet-card-bottom-bar-right">
-          <div className="tweet-card-bottom-bar-right-header">
-            <h3>Mango hosting and domain company</h3>
-            <p>@Mango_hosting . Mar 20</p>
-            <IoEllipsisHorizontal className="tweet-icon" />
-          </div>
-          <div className="tweet-card-bottom-bar-right-body">
-            <p className="tweet-card-bottom-bar-right-body-text">
-              Get the Best and Secured Web Hosting at Kes 1499/yr. 10 GB Web Space, Free SSL Certificate, Unlimited Email Accounts, Unlimited Sub Domains, Free Backups and many more. For Order and More information, Visit our Website: https://mango.ke
-            </p>
-            <div className="tweet-card-bottom-bar-right-body-link-review">
-              <div className="tweet-card-bottom-bar-right-body-link-review-thumbnail">
-                <img src="https://mango.ke/wp-content/uploads/2020/11/logomango.png" alt="some mine" />
-              </div>
-              <div className="tweet-card-bottom-bar-right-body-link-review-meta">
-                <p className="title">
-                  Mango hosting limited
-                </p>
-                <p className="description">
-                  {str.split(' ').slice(0, 15).join(' ')}...
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="tweet-card-bottom-bar-right-footer">
-            <div className="tweet-card-bottom-bar-right-footer-actions">
-
-              <ActionButton icon={<FaComment size={18} />} count="21" />
-              <ActionButton icon={<FaRetweet size={18} />} count="12" />
-              <ActionButton icon={<IoHeart size={18} />} count="45" />
-              <ActionButton icon={<IoIosShare size={18} />} count="34" />
-
-            </div>
-          </div>
-        </div>
+    <a href={metaData?.site_url} target="_blank" rel="noreferrer" className="tweet-card-bottom-bar-right-body-link-review">
+      <div className="tweet-card-bottom-bar-right-body-link-review-thumbnail">
+        <img src={metaData?.site_image} loading="lazy" alt="some mine" />
       </div>
-    </div>
+      <div className="tweet-card-bottom-bar-right-body-link-review-meta">
+        <p className="title">
+          {
+            metaData?.site_title
+          }
+        </p>
+        <p className="description">
+          {metaData?.site_description?.split(' ').slice(0, 15).join(' ')}...
+        </p>
+        <a href={metaData?.site_url} className="link" rel="norefferer">
+          {metaData?.site_title}
+        </a>
+      </div>
+    </a>
   )
 }
 
@@ -427,5 +512,4 @@ export {
   RightSidebarFooter,
 
   TweetCard,
-  ReTweetCard,
 }

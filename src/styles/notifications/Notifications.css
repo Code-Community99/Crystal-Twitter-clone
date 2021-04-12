@@ -40,6 +40,12 @@
 
 .notification-left {
   flex: 0.1;
+  display: flex;
+  justify-content: flex-end;
+  /* align-items: flex-end; */
+  font-size: 26px !important;
+  padding: 0 10px 0 0;
+  box-sizing: border-box;
 }
 
 .notification-right {
