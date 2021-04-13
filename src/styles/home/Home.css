@@ -1,0 +1,61 @@
+.home-write-tweet {
+  display: flex;
+  flex: 1 1;
+  /* padding: 10px 6px; */
+}
+
+.home-write-tweet-left {
+  flex: 0.1;
+  width: 10%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 0;
+}
+
+.home-write-tweet-right {
+  flex: 0.9;
+  width: 90%;
+  padding: 10px;
+}
+
+.home-write-tweet-right-top textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  font-weight: 900;
+  font-size: 18px;
+  /* color: rgba(0, 0, 0, 0.8); */
+  color: rgb(70, 70, 70);
+  padding: 10px 0;
+}
+
+.home-write-tweet-right-top textarea::placeholder {
+  font-weight: 400;
+  font-size: 20px;
+  /* color: rgba(0, 0, 0, 0.8); */
+  color: rgba(70, 70, 70, 0.801);
+}
+
+.home-write-tweet-right-top-who-to-reply {
+  display: inline-flex;
+  width: auto;
+  color: var(--primary-color);
+  font-weight: 600;
+  margin: 6px 0 10px 0;
+  align-items: center;
+  padding: 5px 4px;
+  border-radius: 20px;
+  font-size: 14px;
+  /* justify-content: center; */
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.home-write-tweet-right-top-who-to-reply:hover {
+  background: var(--primary-bg-accent);
+}
+
+.home-write-tweet-right-top-who-to-reply-icon {
+  margin-right: 8px;
+}

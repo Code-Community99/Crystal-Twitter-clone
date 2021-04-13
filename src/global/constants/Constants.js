@@ -128,4 +128,77 @@ const users = [
   },
 ]
 
-export { routes, moreLinks, users }
+const tweets = [
+  {
+    user: {
+      name: 'Raider Dante',
+      handle: '@raider',
+      followers: '2000',
+      following: '1300',
+      quote: 'Some quote',
+      followed_by: 'Somebody Omabere'
+    },
+    tweet_data: {
+      text: 'Start your own web https://mango.ke hosting business.Our resellerhosting plans are the perfect choice for your \nreseller business. They all come with cPanel/WHM the leading control panel in the web hosting industry \nhttps://maidentcleaning.co.ke/office-cleaning-services/ \nhttps://mango.ke/web-hosting/\n virdis.co.ke\nhttps://maidentcleaning.co.ke',
+      images: [
+        'http://placeimg.com/1200/800/nature',
+        'http://placeimg.com/800/1200/nature',
+        'http://placeimg.com/1920/1080/nature',
+        'http://placeimg.com/1500/500/nature',
+      ],
+      videos: [
+        'https://www.youtube.com/watch?v=tWxYqHv5BJo'
+      ],
+      mp4: [],
+      gif: [],
+      tweet_type: 'normal'
+    }
+  },
+  {
+    user: {
+      name: 'Dalmas Ogembo',
+      handle: '@raider',
+      followers: '2000',
+      following: '1300',
+      quote: 'Some quote',
+      followed_by: 'Somenna Ohge'
+    },
+    tweet_data: {
+      text: '\n\nDalmas \n Shamaldas\n \nDante \n\t Ranchodas \n',
+      images: [
+        'http://placeimg.com/1920/1080/nature',
+        'http://placeimg.com/1500/500/nature',
+      ],
+      videos: [
+        'https://www.youtube.com/watch?v=tWxYqHv5BJo'
+      ],
+      mp4: [],
+      gif: [],
+      tweet_type: 'normal'
+    }
+  },
+  {
+    user: {
+      name: 'Raider Dante',
+      handle: '@raider',
+      followers: '2000',
+      following: '1300',
+      quote: 'Some quote',
+      followed_by: 'Somebody Omabere'
+    },
+    tweet_data: {
+      text: 'Our reseller hosting plans are the perfect choice for your \nreseller business. They all https://mango.ke, come \nwith cPanel/WHM the leading control panel in the web hosting industry https://mango.ke/web-hosting/',
+      images: [
+        'http://placeimg.com/1200/800/nature',
+      ],
+      videos: [
+        'https://www.youtube.com/watch?v=tWxYqHv5BJo'
+      ],
+      mp4: [],
+      gif: [],
+      tweet_type: 'retweet'
+    }
+  }
+]
+
+export { routes, moreLinks, users, tweets }

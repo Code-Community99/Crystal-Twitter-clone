@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Avatar } from '@material-ui/core';
 import { Tabs } from 'uiw';
 import { } from 'react-icons/io';
@@ -18,10 +18,13 @@ import './../../styles/profile/Profile.css';
 import { Button, IconButton } from '@material-ui/core';
 import { IoArrowBack, IoCalendar, IoLink, IoLocate, IoLocation, IoLocationOutline } from 'react-icons/io5';
 import { } from 'react-icons/io5';
-import { FaBirthdayCake, FaLocationArrow } from 'react-icons/fa';
+import { FaBirthdayCake } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { tweets, users } from '../../global/constants/Constants';
 
 function Profile() {
+  const [metaData, setMetaData] = useState(null);
+
   return (
     <MainLayout>
 
@@ -110,19 +113,22 @@ function Profile() {
 
             <Tabs.Pane label="Tweets" key="1">
               <div className="tweets-tab">
-                <TweetCard />
-                <ReTweetCard />
-                <TweetCard />
-                {/* <ReTweetCard />
-                <TweetCard />
-                <ReTweetCard />
-                <ReTweetCard />
-                <ReTweetCard />
-                <ReTweetCard /> */}
+                {/* ALL TWEETS OF THE USER HERE */}
+                {
+                  tweets.map((tweet, index) => {
+                    return (
+                      <TweetCard key={index} user={tweet.user} tweetdata={tweet.tweet_data} />
+                    )
+                  })
+                }
+
               </div>
             </Tabs.Pane>
             <Tabs.Pane label="Tweets & replies" key="2">
-              Tweets & replies
+              {
+                metaData &&
+                metaData.toString()
+              }
             </Tabs.Pane>
             <Tabs.Pane label="Media" key="3">
               Media

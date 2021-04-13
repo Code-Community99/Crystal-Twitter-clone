@@ -24,6 +24,7 @@ body {
   --primary-color: #1da1f2;
   /* --primary-color-darker: #1323ff; */
   --primary-bg-accent: #1da0f21a;
+  --primary-hover-color: #29292907;
   --primary-border-color: rgb(235, 238, 240);
 
   --primary-border-color: #aaaaaa50;
@@ -38,11 +39,19 @@ body {
   /* margin-top: var(--nav-size); */
   display: flex;
   flex: 1;
+  min-height: 100vh;
 }
 
 .divider {
   height: 1px;
   background-color: var(--primary-border-color);
+}
+
+.spacer {
+  height: 12px;
+  background: rgba(238, 238, 238, 0.432);
+  border-top: 1px solid var(--primary-border-color);
+  border-bottom: 1px solid var(--primary-border-color);
 }
 
 .display-flex {
@@ -71,4 +80,8 @@ body {
 
 .text-center {
   text-align: center;
+}
+
+.react-simple-image-viewer__modal {
+  z-index: 12;
 }
