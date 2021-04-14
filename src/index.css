@@ -8,23 +8,19 @@
   /* scroll-margin-top: 10px;
   scroll-padding-top: 60px; */
   box-sizing: border-box;
+  /* font-size: 12px; */
 }
-
-body {
-  margin: 0;
-  padding: 0 20px;
-  font-family: "Lato", sans-serif;
-}
-
 
 :root {
   --nav-size: 60px;
   --link-size: 40px;
-  --primary-bg: #fff;
-  --primary-color: #1da1f2;
+  /* --primary-bg: #ffffff; */
+  /* --primary-color: #1da1f2; */
   /* --primary-color-darker: #1323ff; */
-  --primary-bg-accent: #1da0f21a;
-  --primary-hover-color: #29292907;
+  /* --primary-bg-accent: #1da0f21a; */
+  --primary-bg-accent: #1da0f21c;
+  /* --primary-hover-color: #29292907; */
+  /* --primary-hover-color: #2929291e; */
   --primary-border-color: rgb(235, 238, 240);
 
   --primary-border-color: #aaaaaa50;
@@ -35,11 +31,26 @@ body {
   --twitter-lighter-color: #ebeef0;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.main-wrapper {
+  padding: 0 20px;
+  background: var(--primary-bg);
+  /* color: var(--primary-default-color); */
+  /* color: white !important; */
+}
+
+
 .main-content {
   /* margin-top: var(--nav-size); */
   display: flex;
   flex: 1;
   min-height: 100vh;
+  transition: 0.4s;
 }
 
 .divider {
@@ -85,3 +96,75 @@ body {
 .react-simple-image-viewer__modal {
   z-index: 12;
 }
+
+button:disabled {
+  opacity: 0.7;
+}
+
+.overlay-card-wrapper {
+  height: 90vh;
+  /* background: red; */
+}
+
+.overlay-card {
+  width: 46vw;
+  position: relative;
+  min-height: 30vh;
+  /* height: 40vh; */
+  max-height: 90vh;
+  border-radius: 15px !important;
+  /* background: var(--primary-bg) !important; */
+  color: var(--primary-global-colour);
+  /* color: white; */
+  /* mix-blend-mode: difference; */
+}
+
+.overlay-card-header {
+  height: var(--nav-size);
+  position: sticky;
+  top: 0;
+  left: 0;
+  /* background-color: var(--primary-bg) !important; */
+}
+
+.overlay-card-header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.overlay-card-header-close-btn {
+  padding: 4px !important;
+  margin: auto 6px !important;
+  color: var(--primary-color) !important;
+  font-weight: 400 !important;
+}
+
+.overlay-card-body {
+  height: calc(100% - var(--nav-size));
+  max-height: 70vh;
+  position: relative;
+  overflow-y: auto;
+}
+
+.fixed-height {
+  height: 80vh;
+}
+
+.overlay-card-header-heading {
+  position: relative;
+  height: 100%;
+}
+
+.overlay-card-header-heading h2 {
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 24px;
+  font-weight: 900;
+  /* color: var(--primary-global-color); */
+}
+
+/* .overlay-card-footer{} */

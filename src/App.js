@@ -10,11 +10,25 @@ import Notifications from './pages/notifications/Notifications';
 import Profile from './pages/profile/Profile';
 import Explore from './pages/explore/Explore';
 import Home from './pages/home/Home';
+import Bookmarks from './pages/bookmarks/Bookmarks';
+
+import './styles/home/Home.css'
+import { useSelector } from 'react-redux';
+import { selectColour } from './features/display/DisplaySlice';
 
 
 function App() {
+
+  const colour = useSelector(selectColour);
+
   return (
-    <div>
+    <div className="main-wrapper" style={
+      {
+        '--primary-color': colour.colour,
+        '--primary-bg': colour.bg,
+        '--primary-global-colour': colour.global_colour
+      }
+    }>
       <Router>
         {/* <Navbar /> */}
         <div className="main-content">
@@ -23,6 +37,7 @@ function App() {
             <Route exact path='/' component={Home} />
             <Route exact path='/notifications' component={Notifications} />
             <Route exact path='/explore' component={Explore} />
+            <Route exact path='/bookmarks' component={Bookmarks} />
             <Route exact path='/profile' component={Profile} />
             <Route render={() => ('PAGE NOT FOUND')} />
           </Switch>

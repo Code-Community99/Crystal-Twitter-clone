@@ -5,10 +5,15 @@ import './../../styles/Sidebar.css';
 import { FaCheck, FaDotCircle, FaEllipsisH, FaTwitter } from 'react-icons/fa';
 import { IoEllipsisHorizontal, IoEllipsisHorizontalCircleOutline } from 'react-icons/io5';
 
-import { Avatar, Button, IconButton } from '@material-ui/core'
-import { Popover } from 'uiw'
+import { Avatar, Button, Card, IconButton } from '@material-ui/core'
+import { Overlay, Popover } from 'uiw'
 import { IoIosClose } from 'react-icons/io';
 import { MenuLinks, MoreAccountOptions, MoreLinks } from './SidebarComponents';
+import WriteTweet from '../home/HomeComponents';
+import NewsLetters from './../../../pages/newsletter/NewsLetters';
+import Display from './../../../pages/display/Display';
+import { useSelector } from 'react-redux';
+import { selectColour } from './../../../features/display/DisplaySlice';
 
 
 function Sidebar() {
@@ -16,8 +21,62 @@ function Sidebar() {
   const [moreActive, setMoreActive] = useState(false);
   const history = useHistory();
 
+  const colour = useSelector(selectColour);
+
+  const [tweetOverlay, setTweetOverlay] = useState(false);
+
   return (
     <div className="sidebar">
+
+      <Overlay isOpen={false}>
+        <div className="overlay-card-wrapper">
+          <Card className="overlay-card">
+            <div className="overlay-card-header">
+              <div className="overlay-card-header-inner">
+                <IconButton className="overlay-card-header-close-btn" onClick={e => setTweetOverlay(prev => !prev)}>
+                  <IoIosClose size={40} className="overlay-card-header-close-icon" />
+                </IconButton>
+              </div>
+              <div className="divider" />
+            </div>
+            <div className="overlay-card-body">
+              <WriteTweet />
+            </div>
+          </Card>
+        </div>
+      </Overlay>
+
+      <Overlay isOpen={false}>
+        <div className="overlay-card-wrapper">
+          <Card className="overlay-card fixed-height">
+            <div className="overlay-card-header">
+              <div className="overlay-card-header-inner">
+                <IconButton className="overlay-card-header-close-btn" onClick={e => setTweetOverlay(prev => !prev)}>
+                  <IoIosClose size={40} className="overlay-card-header-close-icon" />
+                </IconButton>
+              </div>
+            </div>
+            <div className="overlay-card-body">
+              <NewsLetters />
+            </div>
+          </Card>
+        </div>
+      </Overlay>
+
+      <Overlay isOpen={tweetOverlay}>
+        <div className="overlay-card-wrapper">
+          <Card className="overlay-card fixed-height" style={{ background: colour.bg }}>
+            <div className="overlay-card-header">
+              <div className="overlay-card-header-heading">
+                <h2 style={{ color: colour.global_colour }}>Customize your view</h2>
+              </div>
+            </div>
+            <div className="overlay-card-body">
+              <Display />
+            </div>
+          </Card>
+        </div>
+      </Overlay>
 
       <div className="sidebar-sticky h-100">
         <div className="position-relative h-100">
@@ -64,15 +123,15 @@ function Sidebar() {
 
             {/* TWEET BUTTON */}
             <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-              <Button className="tweet-button">
+              <Button className="tweet-button" onClick={e => setTweetOverlay(prev => !prev)}>
                 Tweet
-          </Button>
+              </Button>
             </div>
 
           </div>
 
           {/* Bottom side of the sidebar */}
-          <Popover placement='top' trigger='click' content={<MoreAccountOptions />} className="more-account-optionss">
+          <Popover placement='top' trigger='click' content={<MoreAccountOptions />} className="more-account-optionss" style={{ background: colour.bg, color: colour.global_colour }}>
             <div className="sidebar-bottom">
               <Avatar src="https://pbs.twimg.com/profile_images/1357950864674205696/8bVQrFvB_400x400.jpg" />
               <div className="middle-details">

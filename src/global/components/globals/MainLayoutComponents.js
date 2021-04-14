@@ -9,6 +9,8 @@ import { FaRetweet, FaCommentAlt, FaComment, FaChartBar, FaLink } from 'react-ic
 import ImageViewer from 'react-simple-image-viewer';
 import ReactPlayer from 'react-player/lazy';
 import { Anchorme } from 'react-anchorme';
+import { useSelector } from 'react-redux';
+import { selectColour } from './../../../features/display/DisplaySlice';
 
 const cheerio = require('cheerio');
 const getUrls = require('get-urls');
@@ -48,11 +50,14 @@ const MainLayoutRight = ({ header, children, newclass }) => {
   )
 }
 
-const MainLayoutHeader = ({ pagetitle, icon, divider }) => {
+const MainLayoutHeader = ({ pagetitle, tagline, icon, divider }) => {
   return (
     <div className={`main-layout-left-header`}>
       <div className="main-layout-header-top">
-        <h2>{pagetitle}</h2>
+        <div>
+          <h2>{pagetitle}</h2>
+          <p className="main-layout-header-top-tag-line">{tagline}</p>
+        </div>
         {
           icon &&
           <IconButton className="main-layout-header-top-btn" title="settings">
@@ -112,6 +117,7 @@ const RightSideBar = ({ header, children }) => {
 }
 
 const RightSidebarSearchHeader = () => {
+  const colour = useSelector(selectColour)
   return (
     <div className="right-sidebar-component-header">
       <div className="twitter-search-component">
@@ -119,7 +125,7 @@ const RightSidebarSearchHeader = () => {
         {/* <Popover trigger="click" placement="bottom" content={<TwitterSearchContent />}> */}
         <div className="twitter-search-component-wrapper">
           <IoIosSearch size={26} className="twitter-search-component-search-icon" />
-          <Popover trigger="focus" placement="bottom" content={<TwitterSearchContent />} className="search-results-popover">
+          <Popover trigger="focus" placement="bottom" content={<TwitterSearchContent />} className="search-results-popover" style={{ background: colour.bg, color: colour.global_colour }}>
             <input className="twitter-search-component-input" placeholder="Search Twitter" />
           </Popover>
           <IoIosCloseCircle size={26} className="twitter-search-component-cancel-icon" />
@@ -212,11 +218,12 @@ const Trend = ({ subtitle, title, tweets }) => {
 }
 
 const WhoToFollow = ({ user }, ref) => {
+  const colour = useSelector(selectColour)
   return (
     <div>
       <div className="who-to-follow">
         <div>
-          <Popover trigger="hover" delay={{ show: 1000, hide: 4000 }} placement="bottom" autoAdjustOverflow={true} visibleArrow={false} usePortal={true} content={<WhoToFollowHoverPopover ref={ref} user={user} />} className="who-to-follow-popover-inner">
+          <Popover trigger="hover" delay={{ show: 1000, hide: 4000 }} placement="bottom" autoAdjustOverflow={true} visibleArrow={false} usePortal={true} content={<WhoToFollowHoverPopover ref={ref} user={user} />} className="who-to-follow-popover-inner" style={{ background: colour.bg }}>
             <div className="who-to-follow-start">
               <Avatar className="who-to-follow-start-avatar capitalize">
                 {user?.name[0]}

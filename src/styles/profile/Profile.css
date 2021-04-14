@@ -15,7 +15,8 @@
 
 .my-custom-header-details p {
   font-size: 14px;
-  color: #aaa;
+  color: var(--primary-global-colour);
+  opacity: 0.8;
 }
 
 .profile-data-top {
@@ -79,13 +80,15 @@
 }
 
 .profile-data-lower-name-handle p {
-  color: #aaa;
+  color: var(--primary-global-colour);
+  opacity: 0.8;
   font-size: 16px;
 }
 
 .profile-data-lower-bio {
   margin: 10px 0;
   font-size: 16px;
+  color: var(--primary-global-colour);
 }
 
 .profile-data-lower-more {
@@ -96,7 +99,8 @@
 
 .profile-data-lower-more-item {
   display: flex;
-  color: #aaa;
+  color: var(--primary-global-colour);
+  opacity: 0.8;
   margin-right: 10px;
   align-items: center;
 }
@@ -119,7 +123,7 @@
 
 .profile-data-lower-followers-following .f-link {
   margin-right: 15px;
-  color: black;
+  color: var(--primary-global-colour);
   text-decoration: none;
 }
 
@@ -134,6 +138,7 @@
 
 .profile-data-lower-followers-following .f-link .f-link-text {
   font-weight: 400;
-  color: #aaa;
+  color: var(--primary-global-colour);
+  opacity: 0.8;
   font-size: 16px;
 }
