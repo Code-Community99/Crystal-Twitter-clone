@@ -61,6 +61,11 @@
   height: 100%;
 }
 
+.main-layout-header-top-tag-line {
+  font-size: 14px;
+  color: #292929c9;
+}
+
 .main-layout-header-top-btn {
   color: var(--primary-color) !important;
   padding: 10px;
@@ -121,6 +126,7 @@
   padding: 14px 0;
   /* position: inherit; */
   border-bottom: 2px solid transparent;
+  color: var(--primary-global-colour);
 }
 
 .main-layout-header-tabs .w-tabs-nav .w-tabs-item:hover {
@@ -182,7 +188,6 @@
   border: none;
   outline: none;
   z-index: 1;
-  /* background-color: rebeccapurple; */
 }
 
 .twitter-search-component-wrapper {
@@ -208,7 +213,8 @@
   flex-direction: row;
   align-items: center;
   border-radius: 30px;
-  background: var(--twitter-search-bg);
+  /* background: var(--twitter-search-bg); */
+  background: linear-gradient(var(--primary-bg));
   padding: 0 50px;
   transition: all 0.02s linear;
 }
@@ -239,7 +245,8 @@
 }
 
 .twitter-search-component-results {
-  background: var(--primary-bg);
+  /* background: var(--primary-bg); */
+  /* background: black; */
   width: 100%;
   box-shadow: 0 0 4px #aaa;
   border-radius: 10px;
@@ -254,7 +261,7 @@
 .twitter-search-component-results .keywords {
   font-weight: 400;
   font-size: 16px;
-  color: rgb(163, 163, 163);
+  color: var(--primary-global-colour);
   font-stretch: expanded;
 }
 
@@ -276,7 +283,8 @@
 .right-sidebar-component-body-common {
   margin-top: 20px;
   border-radius: 15px;
-  background: var(--right-sidebar-component-bg);
+  background: var(--primary-bg-accent);
+  color: var(--primary-global-colour);
 }
 
 .right-sidebar-component-body-common-header {
@@ -308,6 +316,13 @@
 .twitter-trend {
   padding: 10px 15px;
   position: relative;
+  background: var(--primary-bg-accent);
+}
+
+.twitter-trend:hover {
+  cursor: pointer;
+  /* opacity: 0.7; */
+  filter: opacity(0.7);
 }
 
 .twitter-trend .trend-data h3 {
@@ -316,15 +331,14 @@
 }
 
 .twitter-trend .trend-data p {
-  color: #aaa;
+  color: var(--primary-global-colour);
   font-size: 14px;
 }
 
 .twitter-trend .trend-elipsis {
   font-size: 18px;
-  color: #aaa;
+  color: var(--primary-global-colour);
   font-weight: 400;
-  opacity: 0.8;
   position: absolute;
   top: 1px;
   right: 10px;
@@ -358,10 +372,11 @@
 .who-to-follow-start-details h3 {
   font-size: 14px;
   font-weight: 700;
+  color: var(--primary-global-colour);
 }
 
 .who-to-follow-start-details p {
-  color: #aaa;
+  color: var(--primary-global-colour);
   font-size: 16px;
 }
 
@@ -383,17 +398,26 @@
   border-radius: 10px;
   padding: 10px;
   box-sizing: border-box;
+  background: var(--primary-bg);
+}
+
+.who-to-follow-popover-inner {
+  background: var(--primary-bg) !important;
+}
+
+.who-to-follow-popover-inner h3 {
+  color: var(--primary-global-colour) !important;
 }
 
 .who-to-follow-popover-inner .w-popover-inner {
   border-radius: 10px !important;
-  background: var(--primary-bg) !important;
 }
 
 .who-to-follow-popover-header {
   width: 100%;
   display: flex;
   /* position: relative */
+  color: var(--primary-global-colour) !important;
 }
 
 .who-to-follow-popover-header-avatar {
@@ -415,6 +439,7 @@
 .who-to-follow-popover-details h3 {
   font-size: 14px;
   font-weight: 700;
+  color: var(--primary-global-colour);
 }
 
 .who-to-follow-popover-details h3:hover {
@@ -423,7 +448,8 @@
 }
 
 .who-to-follow-popover-details p {
-  color: #aaa !important;
+  color: var(--primary-global-colour) !important;
+  opacity: 0.8;
   font-size: 14px !important;
   font-weight: 400 !important;
 }
@@ -449,13 +475,15 @@
 }
 
 .who-to-follow-popover-followers-following-follow span {
-  color: #aaa !important;
+  color: var(--primary-global-colour) !important;
+  opacity: 0.8;
   font-size: 14px !important;
   font-weight: 400 !important;
 }
 
 .who-to-follow-popover-quote {
-  /* color: #aaa; */
+  color: var(--primary-global-colour);
+  opacity: 0.8;
   font-size: 14px;
   font-weight: 400;
   padding: 10px 0;
@@ -472,7 +500,8 @@
 }
 
 .who-to-follow-popover-footer p {
-  color: rgb(112, 112, 112);
+  color: var(--primary-global-colour);
+  opacity: 0.6;
   font-size: 14px;
   font-weight: 400;
   margin: 0 10px;
@@ -497,7 +526,8 @@
   text-decoration: none;
   margin: 0 10px 0 0;
   font-size: 14px;
-  color: #aaa;
+  color: var(--primary-global-colour);
+  opacity: 0.8;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -509,7 +539,7 @@
 
 .right-sidebar-component-body-footer-bottom p {
   font-size: 14px;
-  color: #aaa;
+  color: var(--primary-global-colour);
 }
 
 .tweet-card {
@@ -524,7 +554,7 @@
 
 .tweet-card-top-bar {
   display: flex;
-  color: #aaa;
+  opacity: 0.8;
   font-size: 14px;
   padding: 6px 0;
   flex: 1;
@@ -536,12 +566,14 @@
   display: flex;
   justify-content: flex-end;
   /* background: red; */
+  color: var(--primary-global-colour) !important;
 }
 
 .tweet-card-top-bar p {
   padding: 0 10px;
   flex: 0.9;
   min-width: 90%;
+  color: var(--primary-global-colour);
 }
 
 .tweet-card-bottom-bar {
@@ -569,19 +601,22 @@
   /* padding: 0 10px; */
   padding-bottom: 8px;
   /* background: red; */
+  color: var(--primary-global-colour);
 }
 
 .tweet-card-bottom-bar-right-header h3 {
   font-size: 18px;
+  color: var(--primary-global-colour);
 }
 
 .tweet-card-bottom-bar-right-header p {
-  color: #aaa;
+  opacity: 0.8;
   /* padding-left: 4px; */
 }
 
 .tweet-card-bottom-bar-right-header .tweet-icon {
   margin-left: auto;
+  color: var(--primary-global-colour);
 }
 
 .tweet-card-bottom-bar-right-body-text {
@@ -590,7 +625,8 @@
   line-height: 1.2rem;
   font-size: 16px;
   font-weight: 500;
-  color: rgba(0, 0, 0, 0.7);
+  color: var(--primary-global-colour);
+  opacity: 0.8;
   white-space: pre-wrap;
 }
 
@@ -616,7 +652,7 @@
   flex: 0.2;
   border-right: 1px solid var(--primary-border-color);
   width: 20%;
-  height: 130px;
+  height: 120px;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -629,8 +665,8 @@
 .tweet-card-bottom-bar-right-body-link-review-thumbnail img {
   /* width: 100%; */
   max-width: 100%;
-  width: fit-content;
-  height: 100%;
+  /* width: fit-content; */
+  /* height: 100%; */
   /* height: fit-content; */
   image-rendering: optimizeQuality;
 }
@@ -645,18 +681,21 @@
 }
 
 .tweet-card-bottom-bar-right-body-link-review-meta .title {
-  color: rgba(0, 0, 0, 0.8);
+  color: var(--primary-global-colour);
+  opacity: 0.8;
 }
 
 .tweet-card-bottom-bar-right-body-link-review-meta .description {
-  color: rgba(0, 0, 0, 0.5);
+  color: var(--primary-global-colour);
+  opacity: 0.8;
   /* max-lines: 2;
   -webkit-line-clamp: 2; */
 }
 
 .tweet-card-bottom-bar-right-body-link-review-meta .link {
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.5);
+  color: var(--primary-global-colour);
+  opacity: 0.8;
   margin: 6px 0;
   /* text-transform: uppercase; */
 }
@@ -665,11 +704,13 @@
   margin-right: 6px;
   font-weight: 400;
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--primary-global-colour);
+  opacity: 0.8;
 }
 
 .tweet-video {
-  background: #eee;
+  color: var(--primary-bg);
+  opacity: 0.8;
   width: 100% !important;
   height: 100% !important;
   border-radius: 20px;
@@ -758,9 +799,12 @@
 
 .action-text {
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--primary-global-colour);
+  opacity: 0.8;
 }
 
 .action-icon-btn {
   padding: 0;
+  color: var(--primary-global-colour) !important;
+  opacity: 1;
 }

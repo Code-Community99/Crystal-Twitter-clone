@@ -1,0 +1,162 @@
+.display-settings {
+  width: 88%;
+  margin: auto;
+  padding: 10px 0 0 0;
+}
+
+.display-settings-para {
+  margin: 6px 0;
+}
+
+.display-settings-preview-card {
+  width: 80%;
+  margin: 15px auto;
+  padding: 10px;
+  display: flex;
+  border: 1px solid var(--primary-border-color);
+  border-radius: 20px;
+  z-index: -1;
+}
+
+.display-settings-preview-card-button {
+  padding: 0 10px;
+}
+
+.display-settings-preview-card-button-btn {
+  /* background: var(--primary-color) !important; */
+  color: white !important;
+}
+
+.display-settings-preview-card-text h4 {
+  /* font-size: 17px; */
+  font-weight: 700;
+  /* color: var(--primary-global-colour); */
+}
+
+.display-settings-preview-card-text h4 span {
+  padding: 0 6px;
+  color: var(--primary-color) !important;
+  font-weight: 400;
+
+}
+
+.display-settings-preview-card-text p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  padding: 10px 0;
+}
+
+.display-settings-preview-card-text p span {
+  color: var(--primary-color);
+}
+
+.style-setting-component {
+  margin: 10px 0;
+}
+
+.style-setting-component-title {
+  font-weight: 600;
+  color: var(--primary-global-colour);
+  opacity: 0.8;
+  font-size: 17px;
+}
+
+.style-setting-component-body {
+  background: var(--primary-bg-accent);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.font-size-slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.font-size-slider-btn {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+}
+
+.l-btn {
+  width: 45px;
+  height: 45px;
+  /* color: var(--primary-color); */
+  font-weight: 900;
+}
+
+.font-size-slider-s {
+  width: calc(100% - 80px);
+}
+
+.pick-colors {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.pick-color-outer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pick-color {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  color: white !important;
+}
+
+.backgrounds {
+  display: flex;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.background {
+  width: 30%;
+  height: 70px;
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.background.active {
+  border-style: solid;
+  border-width: 2px;
+}
+
+.background input[type="checkbox"] {
+  margin: 0 15px 0 10px;
+  cursor: pointer;
+}
+
+.background input[type="radio"]:hover {
+  box-shadow: 0 0 0 10px #aaa;
+  border-radius: 50% !important;
+}
+
+.background p {
+  color: white !important;
+  mix-blend-mode: difference;
+}
+
+.display-settings-preview-card-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px 0;
+}
+
+.display-settings-preview-card-footer-button {
+  color: white !important;
+  border-radius: 30px !important;
+  padding: 10px 25px !important;
+}

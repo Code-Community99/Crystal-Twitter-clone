@@ -22,6 +22,7 @@
   display: flex;
   align-items: center;
   padding: 0 10px;
+  color: var(--primary-global-colour);
 }
 
 .fixed-messaging-component-right-icons {
@@ -82,11 +83,14 @@
 
 .reading-message-header h2 {
   font-size: 20px;
+  color: var(--primary-global-colour);
 }
 
 .reading-message-header p {
   font-weight: 400;
   font-size: 14px;
+  color: var(--primary-global-colour);
+  opacity: 0.9;
 }
 
 .user-to-message {
@@ -115,10 +119,12 @@
   font-size: 16px;
   margin-right: 4px;
   max-lines: 1;
+  color: var(--primary-global-colour);
 }
 
 .user-to-message-details-head span {
-  color: rgba(100, 100, 100, 0.904);
+  color: var(--primary-global-colour);
+  opacity: 0.8;
   font-size: 14px;
   margin: 0 4px;
 }

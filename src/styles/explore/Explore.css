@@ -28,12 +28,12 @@
 
 }
 
-.NotificationRight {
-  /* background-color: red; */
+/* .NotificationRight {
+  background-color: red;
   width: 45%;
   height: 180vh;
   position: sticky;
-}
+} */
 
 .exploreContent {
   /* border-left: 1px solid rgba(211, 203, 216, 0.3);
@@ -89,22 +89,19 @@
 }
 
 .twitter-search-component-input {
-  /* margin-top: 7px; */
   text-align: left;
   height: 80%;
   margin: auto auto;
+  color: var(--primary-global-colour);
+  opacity: 1;
 }
 
 .topNews {
-  /* background-color: purple; */
   height: 300px;
   width: 100%;
-  /* align-items: center; */
   border-radius: 4px;
   position: relative;
   box-sizing: border-box;
-  /* z-index: 2; */
-  /* overflow: hidden; */
 }
 
 .topNews img {
@@ -121,11 +118,11 @@
   /* background-color: red; */
   position: absolute;
   width: 100%;
-  color: #fff;
+  color: var(--primary-global-colour);
+  opacity: 1;
   bottom: 10px;
   left: 0;
   font-weight: bolder;
-  /* background-color: red; */
   padding: 0 30px;
 }
 
@@ -133,11 +130,15 @@
   font-weight: 400;
   font-size: 14px;
   text-transform: uppercase;
+  color: var(--primary-global-colour);
+  opacity: 1;
 }
 
 .topNewsHeadline p {
   font-weight: 900;
   font-size: 24px;
+  color: var(--primary-global-colour);
+  opacity: 0.9;
 }
 
 .twitter-trend {
@@ -148,18 +149,21 @@
 .twitter-trend .trend-data h3 {
   font-weight: 900;
   font-size: 16px;
+  color: var(--primary-global-colour);
+  opacity: 1;
 }
 
 .twitter-trend .trend-data p {
-  /* color: var(--twitter-lighter-color); */
-  color: #aaa;
+  color: var(--primary-global-colour);
+  opacity: 0.8;
   font-size: 14px;
 }
 
 .twitter-trend .trend-elipsis {
   font-size: 18px;
   /* color: var(--primary-color); */
-  color: #aaa;
+  color: var(--primary-global-colour);
+  opacity: 0.8;
   font-weight: 400;
   opacity: 0.8;
   position: absolute;
@@ -181,16 +185,21 @@
 .trendHeader h2 {
   margin-left: 21px;
   height: 50px;
+  color: var(--primary-global-colour);
+  opacity: 1;
 
 }
 
 .trend-data {
   min-height: 65px;
-
+  color: var(--primary-global-colour);
+  opacity: 0.9;
 }
 
 .trend-data p {
   padding: 8px;
+  color: var(--primary-global-colour);
+  opacity: 0.7;
 }
 
 .HappeningsTag {
@@ -224,17 +233,20 @@
 
 .happening-data {
   width: 85%;
-  /* background-color: red; */
+  color: var(--primary-global-colour);
+  opacity: 0.8;
 }
 
 .happening-trend .happening-data p {
-  color: #aaa;
+  color: var(--primary-global-colour);
+  opacity: 0.8;
   font-size: 14px;
 }
 
 .happening-trend .happening-elipsis {
   font-size: 18px;
-  color: #aaa;
+  color: var(--primary-global-colour);
+  opacity: 0.8;
   font-weight: 400;
   opacity: 0.8;
   position: absolute;

@@ -15,7 +15,7 @@
 .home-write-tweet-right {
   flex: 0.9;
   width: 90%;
-  padding: 10px;
+  padding: 10px 15px 4px 15px;
 }
 
 .home-write-tweet-right-top textarea {
@@ -25,8 +25,9 @@
   resize: none;
   font-weight: 900;
   font-size: 18px;
-  /* color: rgba(0, 0, 0, 0.8); */
-  color: rgb(70, 70, 70);
+  background: var(--primary-bg);
+  color: var(--primary-global-colour);
+  opacity: 0.8;
   padding: 10px 0;
 }
 
@@ -34,7 +35,8 @@
   font-weight: 400;
   font-size: 20px;
   /* color: rgba(0, 0, 0, 0.8); */
-  color: rgba(70, 70, 70, 0.801);
+  color: var(--primary-global-colour);
+  opacity: 0.7;
 }
 
 .home-write-tweet-right-top-who-to-reply {
@@ -47,7 +49,6 @@
   padding: 5px 4px;
   border-radius: 20px;
   font-size: 14px;
-  /* justify-content: center; */
   cursor: pointer;
   transition: 0.2s ease;
 }
@@ -58,4 +59,40 @@
 
 .home-write-tweet-right-top-who-to-reply-icon {
   margin-right: 8px;
+}
+
+.home-write-tweet-right-bottom-bar {
+  display: flex;
+  padding: 10px 0;
+  /* background-color: purple; */
+  align-items: center;
+}
+
+.home-write-tweet-right-bottom-bar-icons {
+  display: flex;
+  align-items: center;
+  /* background-color: red; */
+}
+
+.action-button {
+  color: var(--primary-color);
+  margin-right: 1px;
+}
+
+.action-button-btn {
+  padding: 10px !important;
+  color: var(--primary-color) !important;
+}
+
+.home-write-tweet-right-bottom-bar-button {
+  margin-left: auto;
+}
+
+.home-write-tweet-right-bottom-bar-button-b {
+  background: var(--primary-color) !important;
+  color: white !important;
+  padding: 8px 20px !important;
+  border-radius: 50px !important;
+  text-transform: capitalize !important;
+  font-weight: 600 !important;
 }

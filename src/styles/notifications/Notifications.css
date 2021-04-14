@@ -53,11 +53,15 @@
 }
 
 .notification-right-wrapper h5 {
-  color: #aaa;
+  color: var(--primary-global-colour);
+  opacity: 0.8;
   font-weight: 400;
 }
 
-.notification-details {}
+.notification-right-wrapper p {
+  color: var(--primary-global-colour);
+  opacity: 0.8;
+}
 
 .notification-details-header-text {
   display: flex;
@@ -68,6 +72,8 @@
 .notification-details-header-text h3 {
   font-size: 16px;
   font-weight: 900;
+  color: var(--primary-global-colour);
+  opacity: 1;
 }
 
 .notification-details-header-text h3:hover {
@@ -76,15 +82,15 @@
 
 .notification-details-header-text span {
   margin-left: 10px;
-  /* color: #aaa; */
-  color: rgba(0, 0, 0, 0.9);
+  color: var(--primary-global-colour);
+  opacity: 0.9;
   font-size: 16px;
   font-weight: 400;
 }
 
 .notification-details .text {
-  /* color: #aaa; */
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--primary-global-colour);
+  opacity: 0.9;
   font-size: 16px;
   margin: 10px 0;
   white-space: pre !important;
@@ -99,6 +105,8 @@
   white-space: pre !important;
   word-wrap: normal;
   font-weight: 400;
+  color: var(--primary-global-colour);
+  opacity: 0.8;
 
 }
 
@@ -111,6 +119,8 @@
 .notification-like-avatars .more-options {
   margin-left: auto;
   padding: 10px;
+  color: var(--primary-global-colour);
+  opacity: 0.8;
 }
 
 .notification-like-avatar {
@@ -130,10 +140,13 @@
   font-weight: 900;
   font-size: 22px;
   margin: 10px 0;
+  color: var(--primary-global-colour);
+  opacity: 1;
 }
 
 .no-mention p {
-  color: #aaa;
+  color: var(--primary-global-colour);
+  opacity: 0.8;
   font-weight: 400;
   font-size: 16px;
 }
