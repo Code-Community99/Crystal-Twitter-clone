@@ -24,11 +24,14 @@ function Sidebar() {
   const colour = useSelector(selectColour);
 
   const [tweetOverlay, setTweetOverlay] = useState(false);
+  const [newsLetterOverlay, setnewsLetterOverlay] = useState(false);
+  const [displayOverlay, setdisplayOverlay] = useState(false);
+  const [keyboardOverlay, setkeyboardOverlay] = useState(false);
 
   return (
     <div className="sidebar">
 
-      <Overlay isOpen={false}>
+      <Overlay isOpen={tweetOverlay} onClose={e => setTweetOverlay(prev => !prev)}>
         <div className="overlay-card-wrapper">
           <Card className="overlay-card">
             <div className="overlay-card-header">
@@ -46,12 +49,12 @@ function Sidebar() {
         </div>
       </Overlay>
 
-      <Overlay isOpen={false}>
+      <Overlay isOpen={newsLetterOverlay} onClose={e => setnewsLetterOverlay(prev => !prev)}>
         <div className="overlay-card-wrapper">
           <Card className="overlay-card fixed-height">
             <div className="overlay-card-header">
               <div className="overlay-card-header-inner">
-                <IconButton className="overlay-card-header-close-btn" onClick={e => setTweetOverlay(prev => !prev)}>
+                <IconButton className="overlay-card-header-close-btn" onClick={e => setnewsLetterOverlay(prev => !prev)}>
                   <IoIosClose size={40} className="overlay-card-header-close-icon" />
                 </IconButton>
               </div>
@@ -63,7 +66,7 @@ function Sidebar() {
         </div>
       </Overlay>
 
-      <Overlay isOpen={tweetOverlay}>
+      <Overlay isOpen={displayOverlay} onClose={e => setdisplayOverlay(prev => !prev)}>
         <div className="overlay-card-wrapper">
           <Card className="overlay-card fixed-height" style={{ background: colour.bg }}>
             <div className="overlay-card-header">
@@ -117,7 +120,14 @@ function Sidebar() {
               <IconButton className="menu-closer" onClick={e => setMoreActive(prev => !prev)}>
                 <IoIosClose />
               </IconButton>
-              <MoreLinks closeFunc={e => setMoreActive(prev => !prev)} />
+
+              <MoreLinks
+                closeFunc={e => setMoreActive(prev => !prev)}
+                newsFunc={e => setnewsLetterOverlay(prev => !prev)}
+                displayFunc={e => setdisplayOverlay(prev => !prev)}
+                keyboardFunc={e => setkeyboardOverlay(prev => !prev)}
+              />
+
             </div>
             {/* POPOVER NORMAL MENU */}
 

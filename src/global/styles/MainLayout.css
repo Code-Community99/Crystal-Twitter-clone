@@ -46,6 +46,8 @@
 
 .main-layout-left-header h3 {
   font-weight: 700;
+  color: white;
+  mix-blend-mode: difference;
 }
 
 .main-layout-header-top {
@@ -61,9 +63,15 @@
   height: 100%;
 }
 
+.main-layout-header-top h2 {
+  color: var(--primary-global-colour);
+}
+
 .main-layout-header-top-tag-line {
   font-size: 14px;
-  color: #292929c9;
+  /* color: #292929c9; */
+  color: var(--primary-global-colour);
+  opacity: 0.6;
 }
 
 .main-layout-header-top-btn {
@@ -96,8 +104,9 @@
   top: calc(var(--nav-size) - 10px);
   left: 0;
   border-bottom: 1px solid var(--primary-border-color);
-  background: var(--primary-bg);
+  background: var(--primary-bg) !important;
   width: 100%;
+  z-index: 1;
 }
 
 .main-layout-header-tabs .w-tabs-nav {
@@ -196,8 +205,14 @@
   align-items: center;
   height: 100%;
   flex-direction: row;
-  position: relative;
+  /* position: relative; */
   /* background-color: red; */
+}
+
+.twitter-search-component-wrapper-popover .w-popover-inner {
+  border-radius: 10px !important;
+  background: var(--primary-bg) !important;
+  box-shadow: 0 0 5px #aaa;
 }
 
 .twitter-search-component-input {
@@ -214,7 +229,7 @@
   align-items: center;
   border-radius: 30px;
   /* background: var(--twitter-search-bg); */
-  background: linear-gradient(var(--primary-bg));
+  background: rgba(238, 238, 238, 0.295);
   padding: 0 50px;
   transition: all 0.02s linear;
 }
@@ -245,7 +260,7 @@
 }
 
 .twitter-search-component-results {
-  /* background: var(--primary-bg); */
+  background: var(--primary-bg);
   /* background: black; */
   width: 100%;
   box-shadow: 0 0 4px #aaa;
@@ -268,6 +283,7 @@
 .search-results-popover .w-popover-inner {
   border-radius: 10px !important;
   background: var(--primary-bg) !important;
+  box-shadow: 0 0 10px #aaa;
 }
 
 .right-sidebar-component-body {
@@ -297,6 +313,8 @@
 
 .right-sidebar-component-body-common-header h2 {
   font-size: 22px;
+  color: var(--primary-global-colour);
+  /* color: white; */
 }
 
 .right-sidebar-component-body-common-header .trends-settings {
@@ -350,6 +368,12 @@
   padding: 10px 15px;
 }
 
+.who-to-follow .w-popover-inner {
+  border-radius: 10px;
+  background: var(--primary-bg);
+  box-shadow: 0 0 5px #aaa;
+}
+
 .who-to-follow-start {
   display: flex;
   justify-content: center;
@@ -397,12 +421,13 @@
   width: calc(100%);
   border-radius: 10px;
   padding: 10px;
-  box-sizing: border-box;
-  background: var(--primary-bg);
+  box-shadow: 0 0 5px #aaa;
+  /* box-sizing: border-box; */
+  /* background: var(--primary-bg); */
 }
 
 .who-to-follow-popover-inner {
-  background: var(--primary-bg) !important;
+  /* background: var(--primary-bg) !important; */
 }
 
 .who-to-follow-popover-inner h3 {

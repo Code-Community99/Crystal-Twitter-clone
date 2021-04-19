@@ -1,6 +1,6 @@
 import { Button, IconButton } from '@material-ui/core';
 import Slider from '@uiw/react-slider';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaFire, FaHeart, FaTwitter } from 'react-icons/fa';
 import { IoCart, IoCheckmark, IoFingerPrintOutline, IoFlower, IoTextOutline, IoStarSharp } from 'react-icons/io5';
 import './../../styles/display/Display.css';
@@ -14,7 +14,7 @@ function Display() {
 
   const [activeColour, setActiveColour] = useState(colour.colour);
   const [activeBgColour, setActiveBgColour] = useState(colour.bg);
-  const [activeGlobalColour, setActiveGlobalColour] = useState(colour.globalColor);
+  const [activeGlobalColour, setActiveGlobalColour] = useState(colour.global_colour);
 
   const dispatch = useDispatch();
 
@@ -34,6 +34,12 @@ function Display() {
       makeDefaultGlobalColour(globalColor)
     )
   }
+
+  // useEffect(() => {
+  //   setActiveColour(colour.colour)
+  //   setActiveGlobalColour(colour.globalColor)
+  //   setActiveBgColour(colour.bg)
+  // }, [])
   return (
     <div className="display-settings">
       <div className="display-settings-para">

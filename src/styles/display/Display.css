@@ -30,7 +30,8 @@
 .display-settings-preview-card-text h4 {
   /* font-size: 17px; */
   font-weight: 700;
-  /* color: var(--primary-global-colour); */
+  /* color: white;
+  mix-blend-mode: difference; */
 }
 
 .display-settings-preview-card-text h4 span {
@@ -45,6 +46,9 @@
   font-size: 16px;
   line-height: 19px;
   padding: 10px 0;
+  /* color: white;
+  opacity: 0.8;
+  mix-blend-mode: difference; */
 }
 
 .display-settings-preview-card-text p span {
@@ -57,9 +61,12 @@
 
 .style-setting-component-title {
   font-weight: 600;
-  color: var(--primary-global-colour);
+  /* color: var(--primary-global-colour); */
   opacity: 0.8;
   font-size: 17px;
+  /* color: white;
+  opacity: 0.8;
+  mix-blend-mode: difference; */
 }
 
 .style-setting-component-body {
@@ -78,6 +85,9 @@
   width: 40px;
   height: 40px;
   padding: 10px;
+  /* color: white; */
+  /* opacity: 0.8; */
+  /* mix-blend-mode: difference; */
 }
 
 .l-btn {

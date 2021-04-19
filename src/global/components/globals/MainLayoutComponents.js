@@ -117,20 +117,19 @@ const RightSideBar = ({ header, children }) => {
 }
 
 const RightSidebarSearchHeader = () => {
-  const colour = useSelector(selectColour)
   return (
     <div className="right-sidebar-component-header">
       <div className="twitter-search-component">
 
-        {/* <Popover trigger="click" placement="bottom" content={<TwitterSearchContent />}> */}
-        <div className="twitter-search-component-wrapper">
-          <IoIosSearch size={26} className="twitter-search-component-search-icon" />
-          <Popover trigger="focus" placement="bottom" content={<TwitterSearchContent />} className="search-results-popover" style={{ background: colour.bg, color: colour.global_colour }}>
+        <Popover trigger="click" placement="bottom" className="twitter-search-component-wrapper-popover" content={<TwitterSearchContent />} visibleArrow={false}>
+          <div className="twitter-search-component-wrapper">
+            <IoIosSearch size={26} className="twitter-search-component-search-icon" />
+            {/* <Popover trigger="focus" placement="bottom" content={<TwitterSearchContent />} className="search-results-popover" style={{ background: colour.bg, color: colour.global_colour }}> */}
             <input className="twitter-search-component-input" placeholder="Search Twitter" />
-          </Popover>
-          <IoIosCloseCircle size={26} className="twitter-search-component-cancel-icon" />
-        </div>
-        {/* </Popover> */}
+            {/* </Popover> */}
+            <IoIosCloseCircle size={26} className="twitter-search-component-cancel-icon" />
+          </div>
+        </Popover>
 
       </div>
     </div>
@@ -138,8 +137,9 @@ const RightSidebarSearchHeader = () => {
 }
 
 const TwitterSearchContent = () => {
+  const colour = useSelector(selectColour)
   return (
-    <div className="twitter-search-component-results">
+    <div className="twitter-search-component-results" style={{ background: colour.bg, color: colour.global_colour }}>
       <p className="keywords text-center">Try searching for people, topics, or keywords</p>
     </div>
   )
@@ -218,12 +218,11 @@ const Trend = ({ subtitle, title, tweets }) => {
 }
 
 const WhoToFollow = ({ user }, ref) => {
-  const colour = useSelector(selectColour)
   return (
     <div>
       <div className="who-to-follow">
         <div>
-          <Popover trigger="hover" delay={{ show: 1000, hide: 4000 }} placement="bottom" autoAdjustOverflow={true} visibleArrow={false} usePortal={true} content={<WhoToFollowHoverPopover ref={ref} user={user} />} className="who-to-follow-popover-inner" style={{ background: colour.bg }}>
+          <Popover trigger="hover" delay={{ show: 1000, hide: 4000 }} placement="bottom" autoAdjustOverflow={true} visibleArrow={false} usePortal={true} content={<WhoToFollowHoverPopover ref={ref} user={user} />} className="who-to-follow-popover-inner">
             <div className="who-to-follow-start">
               <Avatar className="who-to-follow-start-avatar capitalize">
                 {user?.name[0]}
@@ -246,9 +245,9 @@ const WhoToFollow = ({ user }, ref) => {
   )
 }
 const WhoToFollowHoverPopover = forwardRef(({ user }, ref) => {
-  console.log("USER=>", user)
+  const colour = useSelector(selectColour)
   return (
-    <div className="who-to-follow-popover">
+    <div className="who-to-follow-popover" style={{ background: colour.bg, color: colour.global_colour }}>
       <div className="clear-fix" />
       <div className="w-100">
         <div className="who-to-follow-popover-header">
