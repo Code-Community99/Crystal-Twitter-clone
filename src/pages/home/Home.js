@@ -1,6 +1,6 @@
 import React from 'react';
 import { IoStarSharp } from 'react-icons/io5';
-
+import { HiSparkles } from 'react-icons/all'
 import {
   MainLayout,
   MainLayoutLeft,
@@ -13,13 +13,14 @@ import {
 } from '../../global/components/globals/MainLayoutComponents';
 import WriteTweet from '../../global/components/home/HomeComponents';
 import { tweets } from '../../global/constants/Constants';
+import { IoStar } from 'react-icons/io5';
 
 function Home() {
   return (
     <MainLayout>
 
       <MainLayoutLeft>
-        <MainLayoutHeader pagetitle="Home" icon={<IoStarSharp />} divider={true} />
+        <MainLayoutHeader pagetitle="Home" icon={<HiSparkles size="26" />} divider={true} />
         <WriteTweet />
         <div className="spacer" />
         <div className="home-tweets">

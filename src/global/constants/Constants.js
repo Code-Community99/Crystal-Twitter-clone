@@ -6,12 +6,12 @@ const routes = [
   {
     icon: <IoHome />,
     title: 'Home',
-    to: '/'
+    to: ''
   },
   {
     icon: <FaHashtag />,
     title: 'Explore',
-    to: './explore'
+    to: '/explore'
   },
   {
     icon: <FaBell />,

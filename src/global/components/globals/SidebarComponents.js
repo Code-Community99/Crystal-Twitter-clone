@@ -1,24 +1,43 @@
 import { Avatar, IconButton } from '@material-ui/core';
 import { useEffect, useState } from 'react';
 import { FaCheck, FaCommentAlt, FaAd, FaChartBar, FaCog, FaKeyboard } from 'react-icons/fa';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import { moreLinks, routes } from '../../constants/Constants';
 import { IoFlash, IoNewspaper, IoColorPalette } from 'react-icons/io5';
 import { IoMdHelpCircleOutline } from 'react-icons/io';
+import { useDispatch } from 'react-redux';
+import { activateLink } from '../../../features/globals/sidebarSlice';
 
 const MenuLinks = (props) => {
 
   // const active = useSelector(selectActiveSidebarLink);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const history = useHistory();
 
   const ActivePath = history.location.pathname;
-  // console.log('PATH', ActivePath)
+  console.log('PATH', ActivePath)
   const [activeLink, setActiveLink] = useState(ActivePath);
 
   useEffect(() => {
     setActiveLink(ActivePath)
-  }, [ActivePath])
+    if (ActivePath === '/') {
+      dispatch(activateLink(''))
+      setActiveLink('')
+    }
+    else {
+      if (ActivePath.match('/messages')) {
+        setActiveLink('/messages')
+        dispatch(activateLink('/messages'))
+      }
+      else if (ActivePath.match('/profile')) {
+        setActiveLink('/profile')
+        dispatch(activateLink('/profile'))
+      }
+      else {
+        dispatch(activateLink(ActivePath))
+      }
+    }
+  }, [ActivePath, dispatch, history])
 
   return (
     <div>

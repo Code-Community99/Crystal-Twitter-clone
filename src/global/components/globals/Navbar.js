@@ -4,11 +4,11 @@ import { FaBars, FaBell, FaSearch } from 'react-icons/fa';
 import Avatar from '@uiw/react-avatar';
 import { Badge, Drawer } from 'uiw';
 import { MenuLinks } from './Sidebar';
-
+  
 function Navbar() {
   return (
     <div className="navbar">
-
+ 
       {/* START Top Navbar */}
       <div className="top-navbar">
         <div className="top-navbar-left">

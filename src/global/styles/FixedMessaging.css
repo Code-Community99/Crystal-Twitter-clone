@@ -94,11 +94,13 @@
 }
 
 .user-to-message {
+  width: 100%;
   display: flex;
   align-items: center;
   padding: 10px 6px;
   cursor: pointer;
   transition: background 0.06s linear;
+  text-decoration: none;
 }
 
 .user-to-message:hover {
@@ -132,5 +134,5 @@
 .user-to-message-details-text {
   font-weight: 400;
   font-size: 14px;
-  color: rgba(100, 100, 100, 0.904);
+  color: var(--primary-global-colour);
 }

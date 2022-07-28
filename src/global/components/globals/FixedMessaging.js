@@ -5,7 +5,7 @@ import { IoChatbox, IoChevronBack, IoChevronDown, IoChevronUp } from 'react-icon
 import './../../styles/FixedMessaging.css';
 import { UserToMessage } from './FixedMessagingComponents';
 
-const usersToMessage = [
+export const usersToMessage = [
   {
     name: 'Dalmas Ogembo',
     hashtag: '@alpha',
@@ -100,7 +100,9 @@ function FixedMessaging() {
         }
         {
           messageReading && messageToRead !== null ?
-            <p> {messageToRead.text} </p>
+            <div>
+
+            </div>
             :
             ""
         }
